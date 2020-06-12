@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+function OpportunitiesList(props){
+  return(
+    <div>
+      <h2>{props.title}</h2>
+      <p>{props.body}</p>
+    </div>
+  )
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <OpportunitiesList 
+    title="Opportunities for you"
+    body="Become a volunteer"
+  />,
   document.getElementById('root')
 );
 
