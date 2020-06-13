@@ -19,3 +19,4 @@ export class Welcome extends React.Component {
         );
     }
 }
+
