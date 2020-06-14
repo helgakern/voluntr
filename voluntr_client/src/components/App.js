@@ -8,7 +8,6 @@ import { User, Session } from "../requests";
 import SignInPage from "./SignInPage";
 import SignUpPage from "./SignUpPage";
 import NotFoundPage from "./NotFoundPage";
-import Welcome from "./Welcome";
 import { CreatePage } from "./CreatePage";
 import AuthRoute from "./AuthRoute";
 import { ControlPanel } from "./ControlPanel";
@@ -29,10 +28,6 @@ import {
   } from 'semantic-ui-react'
 
 
-
-// Heads up!
-// We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
-// For more advanced usage please check Responsive docs under the "Usage" section.
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
 
@@ -47,7 +42,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='Voluntr'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -58,7 +53,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Connecting helpers to those who need it'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -115,9 +110,9 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+                <Menu.Item as='a' to="">Opportunities</Menu.Item>
+                <Menu.Item as='a' to="control_panel">Control Panel</Menu.Item>
+                <Menu.Item as='a'>Success Cases</Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted={!fixed}>
                     Log in
@@ -224,7 +219,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = () => (
+const App = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
@@ -246,7 +241,7 @@ const HomepageLayout = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+            <Image src="./src/images/wireframe/cat.jpg" bordered rounded size='large' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -353,4 +348,4 @@ const HomepageLayout = () => (
   </ResponsiveContainer>
 )
 
-export default HomepageLayout
+export default App;
