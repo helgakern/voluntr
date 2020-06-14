@@ -1,0 +1,61 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import OpportunityNewPage from "./OpportunityNewPage";
+import { Opportunities } from "../requests";
+import Spinner from "./Spinner";
+
+export class OpportunitiesPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    
+      opportunities: [],
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    Opportunities.all().then(opportunities => {
+      this.setState({
+        opportunities: opportunities,
+        isLoading: false
+      });
+    });
+  }
+
+
+  render() {
+    if (this.state.isLoading) {
+      return <Spinner />;
+    }
+    const { showAll = false } = this.props;
+    const filteredOpportunities = this.state.opportunities.filter((q, index) => {
+      if (showAll || index < 50) {
+        return true;
+      }
+      return false;
+    });
+    return (
+      <main className="OpportunitiesPage">
+        <h2>Opportunities</h2>
+        <div
+          className="ui list"
+          style={{
+            listStyle: "none",
+            paddingLeft: 0
+          }}
+        >
+          {filteredOpportunities.map(opportunities => (
+            <li className="ui segment" key={opportunities.id}>
+              <Link to={`/opportunities/${opportunities.id}`} className="item" href="">
+                {opportunities.title}
+              </Link>
+              <p>Posted on {opportunities.created_at}</p>
+            </li>
+          ))}
+        </div>
+      </main>
+    );
+  }
+}
