@@ -1,43 +1,33 @@
 import React, { Component } from "react";
-import OpportunityPage from "./OpportunityPage";
+
 import { Opportunities } from "../requests";
-import Spinner from "./Spinner";
 
-class ControlPanel extends Component {
-    constructor(props) {
-        super(props);
+export default class OpportunityNewPage extends Component {
+  state = {
+    errors: []
+  };
+  createAuction = params => {
+    Auction.create(params).then(auction => {
+      if (auction.errors) {
+        this.setState({ errors: auction.errors });
+      } else {
+        this.props.history.push(`/auctions/${auction.id}`);
+      }
+    });
+  };
 
-        this.state = {
-            opportunities: null,
-            isLoading: true,
-            errors: []
-        };
-    }
-
-    componentDidMount(){
-        Opportunities.one(this.props.match.params.id).then(opportunities => {
-            this.setState({
-                opportunities: opportunities,
-                isLoading: false
-            });
-        });
-    }
-
-    deleteOpportunity(){
-        this.setState({
-            opportunities: null
-        });
-    }
-
-    render (){
-        if (this.state.isLoading){
-            return <Spinner />
-        }
-
-        const currentUser = this.props.currentUser;
-        
-    }
+  render() {
+    return (
+      <main>
+        <div className="header">
+          <h1>Create an Auction</h1>
+        </div>
+        <NewAuctionForm
+          key={this.state.id}
+          onSubmit={this.createAuction}
+          errors={this.state.errors}
+        />
+      </main>
+    );
+  }
 }
-
-export default ControlPanel;
-

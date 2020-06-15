@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import OpportunityNewPage from "./OpportunityNewPage";
+import ControlPanel from "./ControlPanel";
 import { Opportunities } from "../requests";
 import Spinner from "./Spinner";
 
