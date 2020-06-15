@@ -5,9 +5,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import { User, Session } from "../requests";
 import SignInPage from "./SignInPage";
-import SignUpPage from "./SignUpPage";
+import { SignUpPage } from "./SignUpPage";
 import NotFoundPage from "./NotFoundPage";
-import { ControlPanel } from "./ControlPanel";
+import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { Welcome } from "./Welcome";
 
