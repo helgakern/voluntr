@@ -2,16 +2,16 @@ import React, { Component } from "react";
 
 import { Opportunities } from "../requests";
 
-export default class OpportunityNewPage extends Component {
+export default class ControlPanel extends Component {
   state = {
     errors: []
   };
-  createAuction = params => {
-    Auction.create(params).then(auction => {
-      if (auction.errors) {
-        this.setState({ errors: auction.errors });
+  createOpportunity = params => {
+    Opportunities.create(params).then(opportunities => {
+      if (opportunities.errors) {
+        this.setState({ errors: opportunities.errors });
       } else {
-        this.props.history.push(`/auctions/${auction.id}`);
+        this.props.history.push(`/opportunities/${opportunities.id}`);
       }
     });
   };
@@ -20,11 +20,11 @@ export default class OpportunityNewPage extends Component {
     return (
       <main>
         <div className="header">
-          <h1>Create an Auction</h1>
+          <h1>Create an Opportunity</h1>
         </div>
-        <NewAuctionForm
+        <NewOpportunityForm
           key={this.state.id}
-          onSubmit={this.createAuction}
+          onSubmit={this.createOpportunity}
           errors={this.state.errors}
         />
       </main>
