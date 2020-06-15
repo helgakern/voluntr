@@ -15,7 +15,7 @@ function OpportunityDetailsPage(props){
             <br />
             Date: <br />
             {props.date}
-            <p>Address: {props.address}</p>
+            <p>Address: {props.local}</p>
             <p>Contact information: {props.contact}</p>
         </div>
     );

@@ -21,9 +21,16 @@ export class OpportunitiesIndexPage extends React.Component {
         opportunities: opportunities,
         isLoading: false
       });
-    });
+    }); 
   }
 
+  deleteOpportunity(id) {
+    Opportunities.destroy(id).then(() => {
+      this.setState({
+        opportunities: this.state.opportunities.filter(q => q.id !== id)
+      });
+    });
+  }
 
   render() {
     if (this.state.isLoading) {
@@ -51,7 +58,6 @@ export class OpportunitiesIndexPage extends React.Component {
               <Link to={`/opportunities/${opportunities.id}`} className="item" href="">
                 {opportunities.title}
               </Link>
-              <p>Posted on {opportunities.created_at}</p>
             </li>
           ))}
         </div>
