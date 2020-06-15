@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Opportunities } from "../requests";
+import NewOpportunityForm from "./NewOpportunityForm";
 
 export default class ControlPanel extends Component {
   state = {
@@ -31,3 +32,4 @@ export default class ControlPanel extends Component {
     );
   }
 }
+

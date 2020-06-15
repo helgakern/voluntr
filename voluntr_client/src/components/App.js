@@ -1,13 +1,13 @@
 import React from 'react';
-import { OpportunitiesPage } from "./OpportunitiesPage";
-import OpportunityPage from "./OpportunityPage";
+import { OpportunitiesIndexPage } from "./OpportunitiesIndexPage";
+import OpportunityDetailsPage from "./OpportunityDetailsPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import { User, Session } from "../requests";
 import SignInPage from "./SignInPage";
 import SignUpPage from "./SignUpPage";
 import NotFoundPage from "./NotFoundPage";
-import { OpportunityNewPage } from "./OpportunityNewPage";
+import { ControlPanel } from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { Welcome } from "./Welcome";
 
@@ -56,11 +56,11 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact component={Welcome} />
 
-            <Route path="/opportunities" exact component={OpportunitiesPage} />
+            <Route path="/opportunities" exact component={OpportunitiesIndexPage} />
             <AuthRoute
               isAuthenticated={currentUser}
               path="/opportunities/new"
-              component={OpportunityNewPage}
+              component={ControlPanel}
             />
             <Route
               exact
@@ -72,7 +72,7 @@ class App extends React.Component {
             <Route
               path="/opportunities/:id"
               render={routeProps => (
-                <OpportunityPage {...routeProps} currentUser={currentUser} />
+                <OpportunityDetailsPage {...routeProps} currentUser={currentUser} />
               )}
             />
             <Route
