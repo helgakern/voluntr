@@ -5,7 +5,7 @@ import OpportunityNewPage from "./OpportunityNewPage";
 import { Opportunities } from "../requests";
 import Spinner from "./Spinner";
 
-export class OpportunitiesPage extends React.Component {
+export class OpportunitiesIndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ export class OpportunitiesPage extends React.Component {
       return false;
     });
     return (
-      <main className="OpportunitiesPage">
+      <main className="OpportunitiesIndexPage">
         <h2>Opportunities</h2>
         <div
           className="ui list"

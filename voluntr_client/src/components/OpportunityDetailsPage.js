@@ -1,6 +1,6 @@
 import React from "react";
 
-function ControlPanel(props){
+function OpportunityDetailsPage(props){
     return (
         <div>
             <h2>
@@ -21,4 +21,4 @@ function ControlPanel(props){
     );
 }
 
-export default OpportunityPage;
+export default OpportunityDetailsPage;
