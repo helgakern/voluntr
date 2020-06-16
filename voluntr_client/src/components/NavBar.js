@@ -24,6 +24,10 @@ function NavBar(props) {
         <NavLink to="/" className="item">
           Home
         </NavLink>
+        <NavLink to="/opportunities/new" className="item">
+          Control Panel
+        </NavLink>
+
         <NavLink to="/opportunities" className="item">
           Opportunities
         </NavLink>
@@ -49,6 +53,7 @@ function NavBar(props) {
             </NavLink>
           </React.Fragment>
         )}
+        
       </div>
     </div>
   );

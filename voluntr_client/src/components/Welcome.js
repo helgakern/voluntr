@@ -10,7 +10,7 @@ export class Welcome extends React.Component {
     return (
       <main className="Welcome">
         <h1>
-          One-On_One Volunteer App
+          One-On-One Volunteer App
           <br />
           Connecting helpers to those who need it
         </h1>

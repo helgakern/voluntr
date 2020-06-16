@@ -1,5 +1,5 @@
 import React from "react";
-import FormErrors from "./FormErrors/FormErrors";
+import FormErrors from "./FormErrors/FormErrors"
 
 function NewOpportunityForm(props) {
   function handleSubmit(event) {
