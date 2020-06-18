@@ -12,47 +12,45 @@ function NavBar(props) {
     }
   };
   return (
-    <div class="teal ui inverted segment">
-      <div class="teal ui inverted secondary pointing menu">
-        <a class="active item">  
-          <NavLink to="/">
-            Home
+    <div class="ui pointing menu">
+          <NavLink to="/" className="item">
+            <img
+            src="https://i.pinimg.com/originals/ae/43/8b/ae438bc37a029cc195588a7fd8002808.jpg"
+            height="50px"
+            />
           </NavLink>
-        </a>
-        <a class="item">  
-          <NavLink to="/opportunities/new">
-            Control Panel
-          </NavLink>
-        </a>
-        <a class="item">
-          <NavLink to="/opportunities">
-            Opportunities
-          </NavLink>
-        </a>
-          {currentUser ? (
-            <>
-              <NavLink exact to="/opportunities/new">
-                Create an Opportunity
-              </NavLink>
-              <NavLink to="/opportunities" onClick={onSignOut}>
-                Sign Out
-              </NavLink>
-              <span className="item" style={{ color: "green" }}>
-                Welcome {currentUser.full_name}
-              </span>
-            </>
-          ) : (
-            <React.Fragment>
-              <NavLink exact to="/sign_in" className="item">
-                Sign In
-              </NavLink>
-              <NavLink exact to="/sign_up" className="item">
-                Sign Up
-              </NavLink>
-            </React.Fragment>
-          )}
-        </div>
+
+          <div className="right menu">
+        <NavLink to="/" className="item">
+          Home
+        </NavLink>
+        <NavLink to="/opportunities" className="item">
+          Opportunities
+        </NavLink>
+        {currentUser ? (
+          <>
+            <NavLink exact to="/opportunities/new" className="item">
+              Create an Opportunity
+            </NavLink>
+            <NavLink to="/opportunities" onClick={onSignOut} className="item">
+              Sign Out
+            </NavLink>
+            <span className="item" style={{ color: "green" }}>
+              Welcome {currentUser.full_name}
+            </span>
+          </>
+        ) : (
+          <React.Fragment>
+            <NavLink exact to="/sign_in" className="item">
+              Sign In
+            </NavLink>
+            <NavLink exact to="/sign_up" className="item">
+              Sign Up
+            </NavLink>
+          </React.Fragment>
+        )}
       </div>
+    </div>
   );
 }
 
