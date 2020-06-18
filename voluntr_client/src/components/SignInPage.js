@@ -55,7 +55,7 @@ class SignInPage extends Component {
               type="email"
               name="email"
               id="email"
-              placeholder="name@domain.com"
+              placeholder="email@domain.com"
             />
           </div>
           <div className="field">
@@ -64,7 +64,7 @@ class SignInPage extends Component {
               type="password"
               name="password"
               id="password"
-              placeholder="Enter your password"
+              placeholder="enter your password"
             />
           </div>
           <button className="ui blue button" type="submit">

@@ -12,8 +12,8 @@ function NavBar(props) {
     }
   };
   return (
-    <div class="ui inverted segment">
-      <div class="ui inverted secondary pointing menu">
+    <div class="teal ui inverted segment">
+      <div class="teal ui inverted secondary pointing menu">
         <a class="active item">  
           <NavLink to="/">
             Home
