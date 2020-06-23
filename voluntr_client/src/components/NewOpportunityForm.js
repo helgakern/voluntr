@@ -11,8 +11,10 @@ function NewOpportunityForm(props) {
     props.onSubmit({
       title: fd.get("title"),
       description: fd.get("description"),
+      tags: fd.get("tags"),
       date: fd.get("date"),
-      local: fd.get("local"),
+      time: fd.get("time"),
+      where: fd.get("where"),
       contact: fd.get("contact")
     });
 
@@ -43,6 +45,11 @@ function NewOpportunityForm(props) {
         <FormErrors forField="description" errors={props.errors} />
       </div>
       <div className="field">
+        <label>Tags</label>
+        <input type="text" name="tags" id="tags" placeholder="Enter tags separated by commas" required />
+        <FormErrors forField="time" errors={props.errors} />
+      </div>
+      <div className="field">
         <label>Date</label>
         <input
           type="number"
@@ -54,9 +61,14 @@ function NewOpportunityForm(props) {
         <FormErrors forField="date" errors={props.errors} />
       </div>
       <div className="field">
-        <label>Local</label>
-        <input type="text" name="local" id="local" placeholder="Put the opportunity's address here" required />
-        <FormErrors forField="local" errors={props.errors} />
+        <label>Time</label>
+        <input type="text" name="time" id="time" placeholder="2:00 PM" required />
+        <FormErrors forField="time" errors={props.errors} />
+      </div>
+      <div className="field">
+        <label>Where</label>
+        <input type="text" name="where" id="where" placeholder="Put the opportunity's address here" required />
+        <FormErrors forField="where" errors={props.errors} />
       </div>
       <div className="field">
         <label>Contact</label>

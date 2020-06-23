@@ -17,6 +17,7 @@ export class OpportunitiesIndexPage extends React.Component {
 
   componentDidMount() {
     Opportunities.all().then(opportunities => {
+      console.log(opportunities)
       this.setState({
         opportunities: opportunities,
         isLoading: false

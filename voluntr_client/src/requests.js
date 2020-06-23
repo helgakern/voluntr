@@ -2,7 +2,7 @@
 
 const BASE_URL = `http://localhost:3000/api/v1`;
 
-// Create a module of Auction related fetch request methods
+// Create a module of Opportunities related fetch request methods
 const Opportunities = {
   // fetch all opportunities from server
   all() {
