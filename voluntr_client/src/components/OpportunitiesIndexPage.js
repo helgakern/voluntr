@@ -9,7 +9,6 @@ export class OpportunitiesIndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    
       opportunities: [],
       isLoading: true
     };
@@ -17,20 +16,11 @@ export class OpportunitiesIndexPage extends React.Component {
 
   componentDidMount() {
     Opportunities.all().then(opportunities => {
-      console.log(opportunities)
       this.setState({
         opportunities: opportunities,
         isLoading: false
       });
     }); 
-  }
-
-  deleteOpportunity(id) {
-    Opportunities.destroy(id).then(() => {
-      this.setState({
-        opportunities: this.state.opportunities.filter(q => q.id !== id)
-      });
-    });
   }
 
   render() {

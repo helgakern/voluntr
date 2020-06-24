@@ -52,10 +52,10 @@ function NewOpportunityForm(props) {
       <div className="field">
         <label>Date</label>
         <input
-          type="number"
+          type="date"
           name="date"
           id="date"
-          placeholder="04/01/2021"
+          placeholder="yyyy-mm-dd"
           required
         />
         <FormErrors forField="date" errors={props.errors} />

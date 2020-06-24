@@ -1,6 +1,6 @@
 import React from 'react';
 import { OpportunitiesIndexPage } from "./OpportunitiesIndexPage";
-import OpportunityDetailsPage from "./OpportunityDetailsPage";
+import OpportunityShowPage from "./OpportunityShowPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import { User, Session } from "../requests";
@@ -10,6 +10,7 @@ import NotFoundPage from "./NotFoundPage";
 import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { Welcome } from "./Welcome";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -39,9 +40,11 @@ class App extends React.Component {
         this.setState({ loading: false });
       });
   };
+
   componentDidMount() {
     this.getUser();
   }
+  
   render() {
     const { loading, currentUser } = this.state;
     if (loading) {

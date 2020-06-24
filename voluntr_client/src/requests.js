@@ -18,8 +18,6 @@ const Opportunities = {
   },
   // creating an opportunity
   create(params) {
-    // `params` is an object that represents an opportunity
-    // { body: 'qBody', title: 'qTitle' }
     return fetch(`${BASE_URL}/opportunities`, {
       method: "POST",
       credentials: "include",
@@ -48,12 +46,9 @@ const Opportunities = {
   }
 };
 
-// This is a helper module with methods associated with creating
-// (and maybe later, destroying) a user session
+
 const Session = {
   create(params) {
-    // `params` is an object that represents a user
-    // { email: 'some@email.com', password: 'some-password' }
     return fetch(`${BASE_URL}/session`, {
       method: "POST",
       credentials: "include",
@@ -71,6 +66,32 @@ const Session = {
   }
 };
 
+const Message = {
+  create(id, params) {
+    return fetch(`${BASE_URL}/opportunities/${id}/messages`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(params)
+    }).then(res => res.json());
+  }
+};
+
+const Publish = {
+  create(id, params) {
+    return fetch(`${BASE_URL}/opportunities/${id}/publishings`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(params)
+    }).then(res => res.json());
+  }
+};
+
 const User = {
   current() {
     return fetch(`${BASE_URL}/users/current`, {
@@ -79,8 +100,6 @@ const User = {
     }).then(res => res.json());
   },
   create(params) {
-    // params is going to look like
-    // { email: <some-email>, password: <some-password>, first_name:....}
     return fetch(`${BASE_URL}/users`, {
       method: "POST",
       credentials: "include",
@@ -92,4 +111,4 @@ const User = {
   }
 };
 
-export { Opportunities, Session, User, };
+export { Opportunities, Message, Session, User, Publish };
