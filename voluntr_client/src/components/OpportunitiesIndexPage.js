@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import CreatedAtShow from "./CreatedAtShow"
 import ControlPanel from "./ControlPanel";
 import { Opportunities } from "../requests";
 import Spinner from "./Spinner";
@@ -23,6 +23,13 @@ export class OpportunitiesIndexPage extends React.Component {
     }); 
   }
 
+  deleteOpportunity(id) {
+    Opportunities.destroy(id).then(() => {
+      this.setState({
+        opportunities: this.state.opportunities.filter(q => q.id !== id)
+      });
+    });
+  }
   render() {
     if (this.state.isLoading) {
       return <Spinner />;
@@ -49,6 +56,7 @@ export class OpportunitiesIndexPage extends React.Component {
               <Link to={`/opportunities/${opportunities.id}`} className="item" href="">
                 {opportunities.title}
               </Link>
+              <p>Posted on {opportunities.created_at}</p>
             </li>
           ))}
         </div>

@@ -1,41 +1,42 @@
 import React from "react";
 import CreatedAtShow from "./CreatedAtShow";
 
-function OpportunitiesDetails(props) {
+
+function OpportunityDetails(props) {
   return (
         <div>
               <h2>
                   Opportunity: <br />
-                  {this.props.title}
+                  {props.title}
               </h2>
               <p></p>
               <h3>
                   Description: <br />
-                  {this.props.description}
+                  {props.description}
               </h3>
               
-              <p>Tag:{this.props.tags}</p>
-              <p>Date:{this.props.date}</p>
-              <p>Time: {this.props.time}</p>
-              <p>Where: {this.props.where}</p>
-              <p>Contact information: {this.props.contact}</p>
+              <p>Tag:{props.tags}</p>
+              <p>Date:{props.date}</p>
+              <p>Time: {props.time}</p>
+              <p>Where: {props.where}</p>
+              <p>Contact information: {props.contact}</p>
+              <p><CreatedAtShow created_at={props.created_at} /></p>    
   
+              <button class="ui button"
+                  onClick={() => {
+                      this.editOpportunity(this.state.opportunities.id);
+                  }}> 
+                  Edit 
+              </button>
+
               <button class="ui button"
                   onClick={() => {
                       this.deleteOpportunity(this.state.opportunities.id);
                   }}> 
                   Delete 
-                  </button>
-                <p>
-                    <CreatedAtShow created_at={props.created_at} />
-                </p>    
+              </button>
         </div>
   );
 }
 
-export default OpportunitiesDetails;
-
-
-
-<div>
-              </div>
+export default OpportunityDetails;

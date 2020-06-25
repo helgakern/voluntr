@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import OpportunityDetails from "./OpportunityDetails";
-import { Opportunities, Message } from "../requests";
+import { Opportunities, Message, Publish } from "../requests";
 import { MessageList } from "./MessageList";
 import Spinner from "./Spinner";
 import NewMessageForm from "./NewMessageForm";
@@ -33,13 +33,13 @@ class OpportunityShowPage extends Component {
         });
       };
 
-    componentDidMount() {
-        Opportunities.all().then(opportunities => {
+      componentDidMount() {
+        Opportunities.one(this.props.match.params.id).then(opportunities => {
           this.setState({
             opportunities: opportunities,
             isLoading: false
           });
-        }); 
+        });
       }
     
       deleteOpportunity() {

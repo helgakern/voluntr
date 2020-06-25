@@ -40,8 +40,8 @@ const Opportunities = {
   },
   destroy(id) {
     return fetch(`${BASE_URL}/opportunity/${id}`, {
-      method: "DELETE",
-      credentials: "include"
+      credentials: "include",
+      method: "DELETE"
     }).then(res => res.json());
   }
 };
@@ -58,6 +58,7 @@ const Session = {
       body: JSON.stringify(params)
     }).then(res => res.json());
   },
+
   destroy() {
     return fetch(`${BASE_URL}/session`, {
       method: "DELETE",

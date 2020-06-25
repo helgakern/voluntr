@@ -75,7 +75,7 @@ class App extends React.Component {
             <Route
               path="/opportunities/:id"
               render={routeProps => (
-                <OpportunityDetailsPage {...routeProps} currentUser={currentUser} />
+                <OpportunityShowPage {...routeProps} currentUser={currentUser} />
               )}
             />
             <Route

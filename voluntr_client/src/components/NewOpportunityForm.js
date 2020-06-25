@@ -15,7 +15,8 @@ function NewOpportunityForm(props) {
       date: fd.get("date"),
       time: fd.get("time"),
       where: fd.get("where"),
-      contact: fd.get("contact")
+      contact: fd.get("contact"),
+      created_at: fd.get("created_at")
     });
 
     currentTarget.reset();

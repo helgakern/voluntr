@@ -1,4 +1,5 @@
 import React from "react";
+import CreatedAtShow from "./CreatedAtShow";
 
 function MessageDetails(props) {
   return (
@@ -9,7 +10,7 @@ function MessageDetails(props) {
         backgroundColor: "teal"
       }}
     >
-      {props.author.first_name} {props.author.last_name} said: ${props.message} on{" "}
+      {props.owner.first_name} {props.owner.last_name} said: ${props.message} on{" "}
       {props.created_at}
       
     </div>
