@@ -22,16 +22,17 @@ function OpportunityDetails(props) {
               <p>Contact information: {props.contact}</p>
               <p><CreatedAtShow created_at={props.created_at} /></p>    
   
-              <button class="ui button"
-                  onClick={() => {
-                      this.editOpportunity(this.state.opportunities.id);
-                  }}> 
-                  Edit 
+              <button className="ui button"
+                onClick={() => {
+                    props.editOpportunity(props.id);
+                }}
+                > 
+                Edit 
               </button>
 
-              <button class="ui button"
+              <button className="ui button"
                   onClick={() => {
-                      this.deleteOpportunity(this.state.opportunities.id);
+                    props.deleteOpportunity(props.id);
                   }}> 
                   Delete 
               </button>

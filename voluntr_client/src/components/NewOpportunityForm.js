@@ -1,4 +1,5 @@
 import React from "react";
+import { OpportunityEditPage } from "./OpportunityEditPage";
 import FormErrors from "./FormErrors/FormErrors"
 
 function NewOpportunityForm(props) {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Opportunities } from "../requests";
-import { FormErrors } from "../FormErrors";
-import { Spinner } from "../Spinner";
-import { NewOpportunityForm } from "./NewOpportunityForm";
+import { FormErrors } from "./FormErrors/FormErrors";
+import Spinner from "./Spinner";
+import NewOpportunityForm from "./NewOpportunityForm";
 
 export const OpportunityEditPage = props => {
   const [errors, setErrors] = useState([]);

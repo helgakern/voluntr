@@ -42,10 +42,15 @@ class OpportunityShowPage extends Component {
         });
       }
     
-      deleteOpportunity() {
-        this.setState({
-            opportunities: null
+      deleteOpportunity(id) {
+        Opportunities.destroy(id).then(() => {
+          this.setState({ opportunities: null });
+          this.props.history.push("/opportunities");
         });
+      }
+
+      editOpportunity(id){
+        
       }
 
       deleteMessage(id){
@@ -79,7 +84,7 @@ class OpportunityShowPage extends Component {
           
           return (
             <main>
-            <OpportunityDetails {...this.state.opportunities} />
+            <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/>
     
             <h2>Previous Messages {userIsOwner()}</h2>
     

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { OpportunitiesIndexPage } from "./OpportunitiesIndexPage";
 import OpportunityShowPage from "./OpportunityShowPage";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import { User, Session } from "../requests";
 import SignInPage from "./SignInPage";
@@ -9,6 +9,7 @@ import { SignUpPage } from "./SignUpPage";
 import NotFoundPage from "./NotFoundPage";
 import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
+import { OpportunityEditPage } from "./OpportunityEditPage";
 import { Welcome } from "./Welcome";
 
 
@@ -60,11 +61,19 @@ class App extends React.Component {
             <Route path="/" exact component={Welcome} />
 
             <Route path="/opportunities" exact component={OpportunitiesIndexPage} />
+            
             <AuthRoute
               isAuthenticated={currentUser}
               path="/opportunities/new"
               component={ControlPanel}
             />
+            
+            <AuthRoute
+            path="/opportunities/:id/edit"
+            isAuthenticated={!!currentUser}
+            component={OpportunityEditPage}
+            />
+            
             <Route
               exact
               path="/sign_up"
@@ -72,19 +81,23 @@ class App extends React.Component {
                 <SignUpPage {...routeProps} onSignUp={this.getUser} />
               )}
             />
+
             <Route
               path="/opportunities/:id"
               render={routeProps => (
                 <OpportunityShowPage {...routeProps} currentUser={currentUser} />
               )}
             />
+
             <Route
               path="/sign_in"
               render={routeProps => (
                 <SignInPage {...routeProps} onSignIn={this.getUser} />
               )}
             />
+
             <Route component={NotFoundPage} />
+
           </Switch>
         </div>
       </BrowserRouter>

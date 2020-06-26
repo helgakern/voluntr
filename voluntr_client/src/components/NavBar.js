@@ -12,7 +12,7 @@ function NavBar(props) {
     }
   };
   return (
-    <div class="ui pointing menu">
+    <div className="ui pointing menu">
           <NavLink to="/" className="item">
             <img
             src="https://i.pinimg.com/originals/ae/43/8b/ae438bc37a029cc195588a7fd8002808.jpg"
