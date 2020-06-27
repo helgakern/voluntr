@@ -4,6 +4,18 @@ import CreatedAtShow from "./CreatedAtShow"
 import ControlPanel from "./ControlPanel";
 import { Opportunities } from "../requests";
 import Spinner from "./Spinner";
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+
+function Map(){
+  return (
+            <GoogleMap
+            defaultZoom={10}
+            defaultCenter={{ lat: 49.282730, lng: -123.120735 }}
+            />  
+  )
+}
+
+const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export class OpportunitiesIndexPage extends React.Component {
   constructor(props) {
@@ -44,6 +56,16 @@ export class OpportunitiesIndexPage extends React.Component {
     return (
       <main className="OpportunitiesIndexPage">
         <h2>Opportunities</h2>
+        <container>
+        <div style={{ width: "59vw", height: "22vw", }}>
+          <WrappedMap
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+            loadingElement={<div style={{ height: "100%" }} />}
+            containerElement={<div style={{ height: "400px" }} />}
+            mapElement={<div style={{ height: "100%" }} />}
+            />
+        </div>
+        </container>
         <div
           className="ui list"
           style={{
