@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_214304) do
+ActiveRecord::Schema.define(version: 2020_06_29_182527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2020_06_26_214304) do
     t.bigint "opportunities_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "opportunity_id"
     t.index ["opportunities_id"], name: "index_messages_on_opportunities_id"
+    t.index ["opportunity_id"], name: "index_messages_on_opportunity_id"
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_214304) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "messages", "opportunities"
   add_foreign_key "messages", "opportunities", column: "opportunities_id"
   add_foreign_key "opportunities", "users"
 end
