@@ -1,5 +1,5 @@
 class Opportunity < ApplicationRecord
-  
+    has_many(:messages, dependent: :destroy)
     belongs_to :user
     validates(:title, presence: true, uniqueness: true)
     validates :description, presence: { message: "must exist" }
@@ -14,7 +14,7 @@ class Opportunity < ApplicationRecord
         state :draft, initial: true
         state :published
 
-        event :published do
+        event :publish do
             transitions from: :draft, to: :published
         end
     end

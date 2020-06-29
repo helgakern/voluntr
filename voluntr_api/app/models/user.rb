@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  
+  has_many :messages, dependent: :nullify
   has_many :opportunities, dependent: :nullify
   has_secure_password
   

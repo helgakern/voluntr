@@ -33,7 +33,7 @@ class Api::V1::UsersController < Api::ApplicationController
       if @user
       render(
         json: @user,
-        include: [:author]
+        include: [:owner]
       )
       else
         render(json: {error: 'User Not found'})

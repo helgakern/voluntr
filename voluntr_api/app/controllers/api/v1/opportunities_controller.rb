@@ -22,7 +22,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
       render(
         json: @opportunities,
      
-        include: [ :author ]
+        include: [ :owner, {messages: [ :owner ]} ]
       )
       else
         render(json: {error: 'Opportunity Not found'})
@@ -32,12 +32,14 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     def create
       opportunity = Opportunity.new opportunity_params
       opportunity.user = current_user
-      if opportunity.save
-      flash[:notice] = "Opportunity created successfully"
-      redirect_to opportunity_path(opportunity)
-      else
-        render(json: {error: 'Opportunity Not found'})
-      end  
+      opportunity.save!
+      render json: { id: opportunities.id }
+      # if opportunity.save
+      # flash[:notice] = "Opportunity created successfully"
+      # redirect_to opportunity_path(opportunity)
+      # else
+      #   render(json: {error: 'Opportunity Not found'})
+      # end  
     end
   
     def edit 
@@ -58,6 +60,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def destroy
+      # @opportunities = opportunities.find(params[:id])
       @opportunities.destroy
       render(json: { status: 200 }, status: 200)
     end

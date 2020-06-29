@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       # /api/v1...
       resources :opportunities do
+        resources :messages, only: [:create, :destroy, :index, :show]
+        resources :publishings, only: :create
       end
       # /api/v1/auctions
       resource :session, only: [:create, :destroy]

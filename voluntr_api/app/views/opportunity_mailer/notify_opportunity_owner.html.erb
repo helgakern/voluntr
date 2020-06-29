@@ -1,0 +1,22 @@
+<h2>Hi, <%= @opportunity_owner.first_name %></h2>
+
+<p>
+<%= @answer.user.first_name %> answered your opportunity: <br>
+<p><%= @opportunity.title %></p>
+</p>
+
+<p>
+    The answer is: <br>
+    <p><%= @anwer.body %></p>
+</p>
+
+<%= link_to(
+    "Click here to view your opportunity",
+    opportunity_url(@opportunity)
+)
+%>
+
+<p>
+    Cheers, <br>
+    Voluntr Team
+</p>

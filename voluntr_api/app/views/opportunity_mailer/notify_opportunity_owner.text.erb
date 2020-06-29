@@ -1,0 +1,12 @@
+Hi, <%= @opportunity_owner.first_name %>
+
+<%= @answer.user.first_name %> answered your opportunity:
+<%= @opportunity.title %>
+
+The answer is:
+<%= @anwer.body %>
+
+Find your opportunity at: <%= opportunity_url(@opportunity) %>
+
+Cheers,
+Voluntr Team

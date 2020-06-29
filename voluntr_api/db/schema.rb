@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_222839) do
+ActiveRecord::Schema.define(version: 2020_06_26_214304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.text "message"
+    t.bigint "opportunities_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["opportunities_id"], name: "index_messages_on_opportunities_id"
+  end
 
   create_table "opportunities", force: :cascade do |t|
     t.string "title"
@@ -41,5 +49,6 @@ ActiveRecord::Schema.define(version: 2020_06_17_222839) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "messages", "opportunities", column: "opportunities_id"
   add_foreign_key "opportunities", "users"
 end
