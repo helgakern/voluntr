@@ -15,6 +15,7 @@ class OpportunityShowPage extends Component {
             isLoading: true,
             errors: []
         };
+        this.deleteOpportunity = this.deleteOpportunity.bind(this)
     }
 
     createMessage = (id, params) => {
@@ -49,7 +50,9 @@ class OpportunityShowPage extends Component {
             header:{'Accept': 'application/json', 
             'Content-Type': 'application/json'
           }
-          });
+          }).then(() => {
+            this.props.history.push("/opportunities");
+          })
         }
         // Opportunities.destroy(id).then(() => {
         //   this.setState({ opportunities: null });
