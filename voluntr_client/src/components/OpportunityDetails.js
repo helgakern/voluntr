@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import CreatedAtShow from "./CreatedAtShow";
-
+import { Opportunities } from "../requests";
+import { OpportunityShowPage } from "./OpportunityShowPage";
+import moment from "moment";
 
 function OpportunityDetails(props) {
   return (
@@ -16,8 +18,8 @@ function OpportunityDetails(props) {
               </h3>
               
               <p>Tag:{props.tags}</p>
-              <p>Date:{props.date}</p>
-              <p>Time: {props.time}</p>
+              <p>Date: {moment(props.date).format("DD/MM/YYYY")}</p>
+              <p>Time: {moment(props.time).format("HH:MM")}</p>
               <p>Where: {props.where}</p>
               <p>Contact information: {props.contact}</p>
               <p><CreatedAtShow created_at={props.created_at} /></p>    
@@ -31,9 +33,10 @@ function OpportunityDetails(props) {
               </button>
 
               <button className="ui button"
-                  onClick={() => {
-                    props.deleteOpportunity(props.id);
-                  }}> 
+              
+                  onClick={() => props.deleteOpportunity(props.id)
+                    // props.deleteOpportunity(props.id);
+                  }> 
                   Delete 
               </button>
         </div>

@@ -78,7 +78,6 @@ export class OpportunitiesIndexPage extends React.Component {
               <Link to={`/opportunities/${opportunities.id}`} className="item" href="">
                 {opportunities.title}
               </Link>
-              <p>Posted on {opportunities.created_at}</p>
             </li>
           ))}
         </div>

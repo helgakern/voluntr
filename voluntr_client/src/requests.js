@@ -40,8 +40,8 @@ const Opportunities = {
   },
   destroy(id) {
     return fetch(`${BASE_URL}/opportunities/${id}`, {
+      method: "DELETE",
       credentials: "include",
-      method: "DELETE"
     }).then(res => res.json());
   }
 };

@@ -43,10 +43,18 @@ class OpportunityShowPage extends Component {
       }
     
       deleteOpportunity(id) {
-        Opportunities.destroy(id).then(() => {
-          this.setState({ opportunities: null });
-          this.props.history.push("/opportunities");
-        });
+        if(window.confirm("Are you sure you want to delete?")){
+          fetch('http://localhost:3000/api/v1/opportunities/'+id,{
+            method: 'DELETE',
+            header:{'Accept': 'application/json', 
+            'Content-Type': 'application/json'
+          }
+          });
+        }
+        // Opportunities.destroy(id).then(() => {
+        //   this.setState({ opportunities: null });
+        //   this.props.history.push("/opportunities");
+        // });
       }
 
       editOpportunity(id){
