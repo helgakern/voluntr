@@ -22,7 +22,7 @@ function OpportunityDetails(props) {
               <p>Time: {moment(props.time).format("HH:MM")}</p>
               <p>Where: {props.where}</p>
               <p>Contact information: {props.contact}</p>
-              <p><CreatedAtShow created_at={props.created_at} /></p>    
+              <p><CreatedAtShow created_at={moment(props.created_at).format("DD/MM/YYYY")} /></p>    
   
               <button className="ui button"
                 onClick={() => {
