@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CreatedAtShow from "./CreatedAtShow";
 import { Opportunities } from "../requests";
 import { OpportunityShowPage } from "./OpportunityShowPage";
+import { OpportunityEditPage } from "./OpportunityEditPage";
 import moment from "moment";
 
 function OpportunityDetails(props) {
@@ -33,7 +34,6 @@ function OpportunityDetails(props) {
               </button>
 
               <button className="ui button"
-              
                   onClick={() => props.deleteOpportunity(props.id)
                     // props.deleteOpportunity(props.id);
                   }> 

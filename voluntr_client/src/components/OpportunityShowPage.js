@@ -16,6 +16,8 @@ class OpportunityShowPage extends Component {
             errors: []
         };
         this.deleteOpportunity = this.deleteOpportunity.bind(this)
+        this.editOpportunity = this.editOpportunity.bind(this)
+
     }
 
     createMessage = (id, params) => {
@@ -61,7 +63,7 @@ class OpportunityShowPage extends Component {
       }
 
       editOpportunity(id){
-        
+        this.props.history.push(`/opportunities/${id}/edit`)
       }
 
       deleteMessage(id){

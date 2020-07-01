@@ -2,7 +2,9 @@ import React from "react";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import FormErrors from "./FormErrors/FormErrors"
 
+
 function NewOpportunityForm(props) {
+
   function handleSubmit(event) {
     event.preventDefault();
     const { currentTarget } = event;
@@ -17,7 +19,7 @@ function NewOpportunityForm(props) {
       time: fd.get("time"),
       where: fd.get("where"),
       contact: fd.get("contact"),
-      created_at: fd.get("created_at")
+      // created_at: fd.get("created_at")
     });
 
     currentTarget.reset();
@@ -32,6 +34,8 @@ function NewOpportunityForm(props) {
           id="title"
           required
           placeholder="Opportunity title..."
+          defaultValue={props.opportunity? props.opportunity.title:null}
+          
         />
         <FormErrors forField="title" errors={props.errors} />
       </div>
@@ -42,13 +46,19 @@ function NewOpportunityForm(props) {
           rows="10"
           id="description"
           placeholder="Opportunity description..."
+          defaultValue={props.opportunity? props.opportunity.description:null}
           required
         />
         <FormErrors forField="description" errors={props.errors} />
       </div>
       <div className="field">
         <label>Tags</label>
-        <input type="text" name="tags" id="tags" placeholder="Enter tags separated by commas" required />
+        <input type="text"
+         name="tags" 
+         id="tags" 
+         placeholder="Enter tags separated by commas" 
+         defaultValue={props.opportunity? props.opportunity.tags:null}
+         required />
         <FormErrors forField="time" errors={props.errors} />
       </div>
       <div className="field">
@@ -58,18 +68,29 @@ function NewOpportunityForm(props) {
           name="date"
           id="date"
           placeholder="yyyy-mm-dd"
+          defaultValue={props.opportunity? props.opportunity.date:null}
           required
         />
         <FormErrors forField="date" errors={props.errors} />
       </div>
       <div className="field">
         <label>Time</label>
-        <input type="text" name="time" id="time" placeholder="2:00 PM" required />
+        <input type="text" 
+        name="time" 
+        id="time" 
+        placeholder="2:00 PM" 
+        defaultValue={props.opportunity? props.opportunity.time:null}
+        required />
         <FormErrors forField="time" errors={props.errors} />
       </div>
       <div className="field">
         <label>Where</label>
-        <input type="text" name="where" id="where" placeholder="Put the opportunity's address here" required />
+        <input type="text" 
+        name="where" 
+        id="where" 
+        placeholder="Put the opportunity's address here" 
+        defaultValue={props.opportunity? props.opportunity.where:null}
+        required />
         <FormErrors forField="where" errors={props.errors} />
       </div>
       <div className="field">
@@ -79,6 +100,7 @@ function NewOpportunityForm(props) {
           name="contact"
           id="contact"
           placeholder="Insert the contact information here"
+          defaultValue={props.opportunity? props.opportunity.contact:null}
           required
         />
         <FormErrors forField="contact" errors={props.errors} />

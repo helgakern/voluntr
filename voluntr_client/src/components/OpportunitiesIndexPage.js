@@ -8,15 +8,6 @@ import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 
-// function Map(){
-//   return (
-//             <GoogleMap
-//             defaultZoom={10}
-//             defaultCenter={{ lat: 49.282730, lng: -123.120735 }}
-//             />  
-//   )
-// }
-
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export class OpportunitiesIndexPage extends React.Component {

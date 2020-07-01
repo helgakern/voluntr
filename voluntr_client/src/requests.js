@@ -27,7 +27,7 @@ const Opportunities = {
       body: JSON.stringify(params)
     }).then(res => res.json());
   },
-  // updating an opportunity
+  // edit an opportunity
   update(id, params) {
     return fetch(`${BASE_URL}/opportunities/${id}`, {
       method: "PATCH",
