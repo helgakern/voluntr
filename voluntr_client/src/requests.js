@@ -69,6 +69,7 @@ const Session = {
 
 const Message = {
   create(id, params) {
+    console.log(params)
     return fetch(`${BASE_URL}/opportunities/${id}/messages`, {
       method: "POST",
       credentials: "include",

@@ -3,6 +3,7 @@ import CreatedAtShow from "./CreatedAtShow";
 import { Opportunities } from "../requests";
 import { OpportunityShowPage } from "./OpportunityShowPage";
 import { OpportunityEditPage } from "./OpportunityEditPage";
+import { NewMessageForm } from "./NewMessageForm";
 import moment from "moment";
 
 function OpportunityDetails(props) {
@@ -13,12 +14,13 @@ function OpportunityDetails(props) {
                   {props.title}
               </h2>
               <p></p>
-              <h3>
+              <p>
                   Description: <br />
                   {props.description}
-              </h3>
+                  
+              </p><br />
               
-              <p>Tag:{props.tags}</p>
+              <p>Tag: {props.tags}</p>
               <p>Date: {moment(props.date).format("DD/MM/YYYY")}</p>
               <p>Time: {moment(props.time).format("HH:MM")}</p>
               <p>Where: {props.where}</p>

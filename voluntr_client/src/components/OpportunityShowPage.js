@@ -21,7 +21,9 @@ class OpportunityShowPage extends Component {
     }
 
     createMessage = (id, params) => {
+      console.log(params)
         Message.create(id, params).then(message => {
+          console.log(message)
             if (message.errors) {
                 this.setState({ errors: message.errors });
             }
@@ -38,6 +40,7 @@ class OpportunityShowPage extends Component {
 
       componentDidMount() {
         Opportunities.one(this.props.match.params.id).then(opportunities => {
+          console.log(opportunities)
           this.setState({
             opportunities: opportunities,
             isLoading: false
@@ -97,9 +100,9 @@ class OpportunityShowPage extends Component {
           
           return (
             <main>
-            <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/>
-    
-            <h2>Previous Messages {userIsOwner()}</h2>
+            {/* <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/> */}
+            <OpportunityDetails {...this.state.opportunities} />
+            <h2>Messages {userIsOwner()}</h2>
     
             {currentUser ? (
               <>

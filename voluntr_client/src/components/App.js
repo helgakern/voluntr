@@ -11,6 +11,29 @@ import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { Welcome } from "./Welcome";
+import PropTypes from 'prop-types'
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
+
+const getWidth = () => {
+  const isSSR = typeof window === 'undefined'
+
+  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
+}
+
 
 
 

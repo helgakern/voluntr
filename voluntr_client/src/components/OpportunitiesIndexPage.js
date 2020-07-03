@@ -8,6 +8,7 @@ import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 
+
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export class OpportunitiesIndexPage extends React.Component {
@@ -46,8 +47,8 @@ export class OpportunitiesIndexPage extends React.Component {
       }
       return false;
     });
-    const position = [49.2557396,-123.0296706];
-    const positionTwo = [49.2557396,-122.9383642];
+    const position = [49.2827,-123.1207];
+    const positionTwo = [49.2123946,-122.9236781];
     return (
       <main className="OpportunitiesIndexPage">
 
@@ -59,14 +60,14 @@ export class OpportunitiesIndexPage extends React.Component {
             containerElement={<div style={{ height: "400px" }} />}
             mapElement={<div style={{ height: "100%" }} />}
             /> */}
-          <Map className="opportunities-map" style={{height: '400px'}} center={position} zoom={15}>
+          <Map className="opportunities-map" style={{height: '400px'}} center={position} zoom={11}>
           <TileLayer 
            attribution='&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
             />
           <Marker position={position}>
           <Popup>
-            Codecore College. <br /> New Westminster BC, V3M 6Z1
+            Downtown Vancouver. <br /> Vancouver BC, V5H 3Z7
           </Popup>
           </Marker>
           <Marker position={positionTwo}>

@@ -3,10 +3,11 @@ import FormErrors from "./FormErrors/FormErrors";
 
 function NewMessageForm(props) {
   function handleMessageSubmit(event) {
+    event.preventDefault();
     const { currentTarget } = event;
     const fd = new FormData(currentTarget);
-    let message = fd.get("message");
-    props.onSubmit(props.opportunities.id, { message: fd.get("message") });
+    let text = fd.get("message");
+    props.onSubmit(props.opportunities.id, { body: fd.get("message") });
   }
 
   return (

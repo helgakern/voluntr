@@ -67,7 +67,7 @@ function NewOpportunityForm(props) {
           type="date"
           name="date"
           id="date"
-          placeholder="yyyy-mm-dd"
+          placeholder="DD-MM-YYYY"
           defaultValue={props.opportunity? props.opportunity.date:null}
           required
         />
