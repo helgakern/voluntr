@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink /* Link */ } from "react-router-dom";
 import { Menu, Segment } from "semantic-ui-react";
 
+
 function NavBar(props) {
+  
   const { currentUser, onSignOut } = props;
 
   const handleSignOutClick = event => {
@@ -13,8 +15,8 @@ function NavBar(props) {
     }
   };
   return (
-    // <div className="ui inverted vertical center aligned segment">
-      <div className="ui large inverted pointing secondary menu">
+    <div className="ui inverted segment">
+      <div className="ui inverted pointing secondary menu">
         <div className="ui container">
             <NavLink to="/" className="active item">
               <img
@@ -57,7 +59,7 @@ function NavBar(props) {
         </div>
       </div>
     </div>
-    // </div>
+  </div>
   );
 }
 

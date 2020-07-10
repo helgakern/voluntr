@@ -9,6 +9,7 @@
     "esri-leaflet-geocoder": "^2.3.3",
     "leaflet": "^1.6.0",
     "leaflet-control-geocoder": "^1.13.0",
+    "leaflet-geosearch": "^3.0.6",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

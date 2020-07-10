@@ -18,6 +18,7 @@ const Opportunities = {
   },
   // creating an opportunity
   create(params) {
+    console.log(params)
     return fetch(`${BASE_URL}/opportunities`, {
       method: "POST",
       credentials: "include",

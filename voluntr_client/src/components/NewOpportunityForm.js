@@ -1,6 +1,9 @@
 import React from "react";
 import { OpportunityEditPage } from "./OpportunityEditPage";
-import FormErrors from "./FormErrors/FormErrors"
+import FormErrors from "./FormErrors/FormErrors";
+import * as ELG from "esri-leaflet-geocoder";
+import { Opportunities } from "../requests";
+
 
 
 function NewOpportunityForm(props) {
@@ -11,7 +14,8 @@ function NewOpportunityForm(props) {
 
     const fd = new FormData(currentTarget);
 
-    props.onSubmit({
+    // props.onSubmit({ 
+      const opportunity = {
       title: fd.get("title"),
       description: fd.get("description"),
       tags: fd.get("tags"),
@@ -19,11 +23,41 @@ function NewOpportunityForm(props) {
       time: fd.get("time"),
       where: fd.get("where"),
       contact: fd.get("contact"),
+      }
       // created_at: fd.get("created_at")
-    });
-
+    // });
+    getCoordinates(opportunity)
     currentTarget.reset();
   }
+
+  async function getCoordinates(opportunity){
+    
+      // let coordinates = []      
+      await ELG.geocode().text(opportunity.where).run(async function (err, results, response) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+
+        // coordinates.push({lat: results.results[0].latlng.lat, lng: results.results[0].latlng.lng})
+        
+        opportunity.coordinates = [results.results[0].latlng.lat, results.results[0].latlng.lng]
+        console.log(opportunity)
+        Opportunities.create(opportunity)
+        // this.setState({opportunities: [...this.setState.opportunities, opportunity]})
+
+        // coordinates = await results
+        // response(new Response(results))
+        // console.log(coordinates)
+        // // coordinates.push(results.results[0].latlng.lat)
+        // // coordinates.push(results.results[0].latlng.lng)
+        // return coordinates
+      })
+        
+  }
+
+
+
   return (
     <form className="ui form" onSubmit={handleSubmit}>
       <div className="field">
