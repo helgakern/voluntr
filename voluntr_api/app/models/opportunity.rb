@@ -1,6 +1,10 @@
 class Opportunity < ApplicationRecord
     has_many(:messages, dependent: :destroy)
     belongs_to :user
+
+    geocoded_by :address
+    after_validation :geocode
+
     validates(:title, presence: true, uniqueness: true)
     validates :description, presence: { message: "must exist" }
 
