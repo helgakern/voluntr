@@ -7,7 +7,8 @@ function MessageDetails(props) {
         fontStyle: "italic",
       }}
     >
-      {props.owner.first_name} {props.owner.last_name} said: {props.body}
+      {props.owner.first_name} {props.owner.last_name} said: 
+      {props.body}
       
     </div>
   );

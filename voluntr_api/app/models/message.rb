@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-    belongs_to :opportunities
+    belongs_to :opportunity
     belongs_to :user
-    validates :message, presence: true
+    validates :body, presence: true
   end

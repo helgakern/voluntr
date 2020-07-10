@@ -97,7 +97,7 @@ class OpportunityShowPage extends Component {
                   );
               }
           };
-          
+          console.log(this.state.opportunities)
           return (
             <main>
             {/* <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/> */}

@@ -8,9 +8,16 @@ class OpportunitySerializer < ActiveModel::Serializer
       :address,
       :contact,
       :longitude,
-      :latitude
+      :latitude,
+      # :message
       )
       
-      belongs_to :user, key: :author
-  
+      belongs_to :user, key: :owner
+      has_many :messages
+      
+      class MessageSerializer < ActiveModel::Serializer
+        attributes :body, :id
+        belongs_to(:user, key: :owner)
+      end
     end
+

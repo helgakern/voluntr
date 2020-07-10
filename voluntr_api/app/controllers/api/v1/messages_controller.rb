@@ -24,12 +24,13 @@ class Api::V1::MessagesController < ApplicationController
     end
   
     def create
-      opportunities = Opportunities.find(params[:opportunities_id])
+      byebug
+      opportunity = Opportunity.find(params[:opportunity_id])
       message = Message.new message_params
-      message.opportunities = opportunities
+      message.opportunity = opportunity
       message.user = current_user
       message.save!
-      render json: { id: message.id }
+      render json: { message }
     end
   
     def destroy
@@ -44,7 +45,7 @@ class Api::V1::MessagesController < ApplicationController
     end
   
     def message_params
-      params.require(:message)
+      params.require(:message).permit :body
     end
   
     def record_not_found
