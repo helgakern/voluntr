@@ -11,7 +11,7 @@ import * as ELG from "esri-leaflet-geocoder";
 
 
 
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+// const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export class OpportunitiesIndexPage extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export class OpportunitiesIndexPage extends React.Component {
     
     const results = await array.map(async opportunity => {
       let coordinates = []      
-      await ELG.geocode().text(opportunity.where).run(async function (err, results, response) {
+      await ELG.geocode().text(opportunity.address).run(async function (err, results, response) {
         if (err) {
           console.log(err);
           return;
@@ -110,7 +110,7 @@ export class OpportunitiesIndexPage extends React.Component {
               {opportunity.coordinates !== undefined ? (
                 <Marker position={opportunity.coordinates}>
                 <Popup>
-                {opportunity.where} <br />
+                {opportunity.address} <br />
                 </Popup>
                 </Marker>
                 ):(null)} */}

@@ -21,7 +21,7 @@ function NewOpportunityForm(props) {
       tags: fd.get("tags"),
       date: fd.get("date"),
       time: fd.get("time"),
-      where: fd.get("where"),
+      address: fd.get("address"),
       contact: fd.get("contact"),
       }
       // created_at: fd.get("created_at")
@@ -118,14 +118,14 @@ function NewOpportunityForm(props) {
         <FormErrors forField="time" errors={props.errors} />
       </div>
       <div className="field">
-        <label>Where</label>
+        <label>Address</label>
         <input type="text" 
-        name="where" 
-        id="where" 
+        name="address" 
+        id="address" 
         placeholder="Put the opportunity's address here" 
-        defaultValue={props.opportunity? props.opportunity.where:null}
+        defaultValue={props.opportunity? props.opportunity.address:null}
         required />
-        <FormErrors forField="where" errors={props.errors} />
+        <FormErrors forField="address" errors={props.errors} />
       </div>
       <div className="field">
         <label>Contact</label>

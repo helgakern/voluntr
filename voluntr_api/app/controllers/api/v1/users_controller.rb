@@ -18,9 +18,9 @@ class Api::V1::UsersController < Api::ApplicationController
       user = User.new user_params
       if user.save
         session[:user_id] = user.id
-        redirect_to root_path
+        render json: {id: user.id}
       else
-        render :new
+        render json: { errors: user.errors.full_messages }, status: 422
       end
     end
   

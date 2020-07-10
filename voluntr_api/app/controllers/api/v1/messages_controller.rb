@@ -1,9 +1,12 @@
 class Api::V1::MessagesController < ApplicationController
+  
     before_action :authenticate_user!, except: [:index, :show]
     before_action :find_message, only: [ :destroy]
   
-    rescue_from(ActiveRecord:: RecordNotFound, with: :record_not_found)
-    rescue_from(ActiveRecord:: RecordInvalid, with: :record_invalid)
+    skip_before_action :verify_authenticity_token  
+
+    # rescue_from(ActiveRecord:: RecordNotFound, with: :record_not_found)
+    # rescue_from(ActiveRecord:: RecordInvalid, with: :record_invalid)
   
     def index
       @opportunities = Opportunities.find(params[:opportunities_id])

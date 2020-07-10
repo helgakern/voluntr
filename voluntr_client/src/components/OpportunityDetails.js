@@ -23,7 +23,7 @@ function OpportunityDetails(props) {
               <p>Tag: {props.tags}</p>
               <p>Date: {moment(props.date).format("DD/MM/YYYY")}</p>
               <p>Time: {moment(props.time).format("HH:MM")}</p>
-              <p>Where: {props.where}</p>
+              <p>Address: {props.address}</p>
               <p>Contact information: {props.contact}</p>
               <p><CreatedAtShow created_at={moment(props.created_at).format("DD/MM/YYYY")} /></p>    
   

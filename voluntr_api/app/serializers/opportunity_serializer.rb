@@ -7,7 +7,7 @@ class OpportunitySerializer < ActiveModel::Serializer
       :time,
       :address,
       :contact,
-      :longitute,
+      :longitude,
       :latitude
       )
       
