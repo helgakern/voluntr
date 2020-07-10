@@ -5,8 +5,10 @@ class OpportunitySerializer < ActiveModel::Serializer
       :description,
       :date,
       :time,
-      :where,
-      :contact
+      :address,
+      :contact,
+      :longitute,
+      :latitude
       )
       
       belongs_to :user, key: :author

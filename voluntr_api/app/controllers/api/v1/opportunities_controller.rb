@@ -72,7 +72,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def opportunity_params
-      params.require(:opportunity).permit(:title, :description, :date, :time, :where, :contact, :tags)
+      params.require(:opportunity).permit(:title, :description, :date, :time, :address, :contact, :tags)
     end
   
     def record_not_found
