@@ -11,7 +11,7 @@ import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { Welcome } from "./Welcome";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import {
   Button,
   Container,

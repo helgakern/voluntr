@@ -33,7 +33,8 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
       opportunity = Opportunity.new opportunity_params
       opportunity.user = current_user
       opportunity.save!
-      render json: { id: opportunities.id }
+      redirect_to '/opportunities'
+      # render json: { id: opportunities.id }
       # if opportunity.save
       # flash[:notice] = "Opportunity created successfully"
       # redirect_to opportunity_path(opportunity)

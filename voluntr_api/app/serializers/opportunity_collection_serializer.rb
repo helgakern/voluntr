@@ -6,7 +6,9 @@ class OpportunityCollectionSerializer < ActiveModel::Serializer
       :date,
       :time,
       :address,
-      :contact
+      :contact,
+      :longitude,
+      :latitude
       )
        belongs_to :user, key: :owner
   end
