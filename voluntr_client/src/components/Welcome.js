@@ -12,6 +12,8 @@ export class Welcome extends React.Component {
         <container>
           <br />
           <h1>
+            Voluntr 
+            <br />
             One-On-One Volunteer App
             <br />
             Connecting helpers to those who need it
