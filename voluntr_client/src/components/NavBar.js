@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { NavLink /* Link */ } from "react-router-dom";
-import { FaAlignRight } from 'react-icons/fa';
 
 
 function NavBar(props) {
-
+  
   const {
     currentUser,
     onSignOut
@@ -18,13 +17,13 @@ function NavBar(props) {
     }
   };
   return (
-
+  <div className="top-menu">  
     <div className = "ui inverted vertical center aligned segment" >
       <div className = "ui large inverted pointing secondary menu" >
         <div className = "ui container" >
-          <NavLink to = "/" className = "active item" >
-          <img src = "https://i.pinimg.com/originals/ae/43/8b/ae438bc37a029cc195588a7fd8002808.jpg" height = "50px" />
-          </NavLink>
+          {/* <NavLink to = "/" className = "active item" >
+          <img src="../src/images/wireframe/logo.jpeg" height = "50px"  />
+          </NavLink> */}
 
     {
       /* <div className="right menu"> */ } 
@@ -46,6 +45,7 @@ function NavBar(props) {
       )} 
     </div> 
   </div> 
+  </div>
 </div>
 );
 }

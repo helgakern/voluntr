@@ -9,11 +9,11 @@ import moment from "moment";
 function OpportunityDetails(props) {
   return (
         <div>
+            <br />
               <h2>
-                  Opportunity: <br />
                   {props.title}
               </h2>
-              <p></p>
+              <br />
               <p>
                   Description: <br />
                   {props.description}

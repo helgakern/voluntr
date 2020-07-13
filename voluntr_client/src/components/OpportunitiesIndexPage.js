@@ -81,29 +81,33 @@ export class OpportunitiesIndexPage extends React.Component {
       <main className = "OpportunitiesIndexPage" >
         <container >
           <div style = {{ width: "59vw", height: "22vw", }}> 
-          {}     
-      <Map className = "opportunities-map" style = {{ height: '400px' }} center = {[this.state.opportunities[0].latitude, this.state.opportunities[0].longitude]} zoom = {11}>
-        <TileLayer attribution = '&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors' url = "https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-      { this.state.opportunities.map(opportunity => ( 
-          <Marker position = {[opportunity.latitude, opportunity.longitude]} >
-            <Popup > {opportunity.address, opportunity.title} < /Popup>      
-          </Marker>
-      ))
-      } {} 
-      </Map> 
+          {}    
+            <br /> 
+            <Map className = "opportunities-map" style = {{ height: '400px' }} center = {[this.state.opportunities[0].latitude, this.state.opportunities[0].longitude]} zoom = {11}>
+              <TileLayer attribution = '&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors' url = "https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+            { this.state.opportunities.map(opportunity => ( 
+                <Marker position = {[opportunity.latitude, opportunity.longitude]} >
+                  <Popup > {opportunity.address, opportunity.title} < /Popup>      
+                </Marker>
+            ))
+            } {} 
+            </Map> 
           </div> 
         </container> 
-      <div className = "ui list" style = {{listStyle: "none", paddingLeft: 0}}> 
-      {filteredOpportunities.map(opportunities => ( 
-        <li className = "ui segment" key = { opportunities.id } >
-          <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" > 
-          { opportunities.title } 
-          </Link> 
-        </li>
-        ))
-      } 
-      </div> 
-      </main >
+        <container>  
+          <br />
+          <div className = "ui list" style = {{listStyle: "none", paddingLeft: 0}}> 
+          {filteredOpportunities.map(opportunities => ( 
+            <li className = "ui segment" key = { opportunities.id } >
+              <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" > 
+              { opportunities.title } 
+              </Link> 
+            </li>
+            ))
+          } 
+          </div> 
+        </container>  
+    </main>
     );
   }
 }
