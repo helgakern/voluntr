@@ -4,7 +4,6 @@ const Footer = () => {
     return(
         <div className="main-footer">
             <div className="container">
-                <hr />
                 <div className="row">
                     <h5 className="col-sm">
                         &copy;{new Date().getFullYear()} VOLUNTR INC | All rights reserved | Terms of Service | Privacy
