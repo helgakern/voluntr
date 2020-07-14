@@ -8,9 +8,9 @@ export class Welcome extends React.Component {
 
   render() {
     return (
-      <main className="Welcome">
+      <main className="welcome">
           
-          <h1>Voluntr</h1> 
+          <h1>VOLUNTR</h1> 
           
           <h2>One-On-One Volunteer App</h2>
             

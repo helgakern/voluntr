@@ -43,8 +43,14 @@ h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  font-size: 9em;
+  color: #6c63ff;
+
+}
+
 h2 {
-  font-size: 8em;
+  font-size: 7em;
   margin-bottom: .5em;
 }
 
@@ -86,7 +92,6 @@ p {
 
 }
 
-
 .opportunities-list {
   display: flex;
   flex-wrap: wrap;
@@ -98,4 +103,17 @@ padding: 3em;
 background-color: hotpink;
 }
 
+.welcome {
+  padding: 3em;
 
+}
+
+.ui form {
+  padding: 3em;
+
+}
+
+.ui-header-sign-in {
+  padding: 3em;
+
+}

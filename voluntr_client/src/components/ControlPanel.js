@@ -21,7 +21,7 @@ export default class ControlPanel extends Component {
     return (
       <main>
         <div className="header">
-          <h1>Create an Opportunity</h1>
+          <h2>Create an Opportunity</h2>
         </div>
         <NewOpportunityForm
           key={this.state.id}

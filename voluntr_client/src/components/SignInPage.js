@@ -42,7 +42,9 @@ class SignInPage extends Component {
     return (
       <main>
         
-        <div className="ui header">Sign In</div>
+        <div className="ui-header-sign-in">
+          <h4>Sign In</h4>
+          </div>
         <form className="ui form" onSubmit={this.createSession}>
           {errors.length > 0 ? (
             <div className="ui negative message FormErrors">
