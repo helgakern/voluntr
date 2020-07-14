@@ -42,7 +42,7 @@ class SignInPage extends Component {
     return (
       <main>
         
-        <div className="ui-header-sign-in">
+        <div className="ui-header-sign">
           <h4>Sign In</h4>
           </div>
         <form className="ui form" onSubmit={this.createSession}>
@@ -70,7 +70,7 @@ class SignInPage extends Component {
               placeholder="enter your password"
             />
           </div>
-          <button className="ui blue button" type="submit">
+          <button className="ui button" type="submit">
             Sign In
           </button>
         </form>

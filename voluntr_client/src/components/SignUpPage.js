@@ -29,6 +29,10 @@ export function SignUpPage(props) {
 
   return (
     <main>
+      <div className="ui-header-sign">
+        <h4>Sign Up</h4>
+      </div>
+
       <form className="ui form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="first_name">First Name</label>

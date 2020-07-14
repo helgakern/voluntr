@@ -3,7 +3,14 @@ import React from 'react';
 const Footer = () => {
     return(
         <div className="main-footer">
-            {/* <h1>Footer</h1> */}
+            <div className="container">
+                <hr />
+                <div className="row">
+                    <h5 className="col-sm">
+                        &copy;{new Date().getFullYear()} VOLUNTR INC | All rights reserved | Terms of Service | Privacy
+                    </h5>
+                </div>
+            </div>
         </div>
     )
 }

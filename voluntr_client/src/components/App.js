@@ -52,7 +52,7 @@ class App extends React.Component {
       return <div />;
     }
     return (
-      
+
       <BrowserRouter>
         <div className="ui container App">
           <NavBar currentUser={currentUser} onSignOut={this.signOut} />
@@ -99,9 +99,11 @@ class App extends React.Component {
             <Route component={NotFoundPage} />
 
           </Switch>
+          
           <Footer />
         </div>
       </BrowserRouter>
+      
     );
   }
 }
