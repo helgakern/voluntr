@@ -50,20 +50,22 @@ class OpportunityShowPage extends Component {
     
       deleteOpportunity(id) {
         if(window.confirm("Are you sure you want to delete?")){
-          fetch('http://localhost:3000/api/v1/opportunities/'+id,{
-            method: 'DELETE',
-            header:{'Accept': 'application/json', 
-            'Content-Type': 'application/json'
-          }
-          }).then(() => {
+          // fetch('http://localhost:3000/api/v1/opportunities/'+id,{
+          //   method: 'DELETE',
+          //   header:{'Accept': 'application/json', 
+          //   'Content-Type': 'application/json'
+          // }
+          Opportunities.destroy(id)
+          .then(() => {
             this.props.history.push("/opportunities");
           })
+          }
         }
         // Opportunities.destroy(id).then(() => {
         //   this.setState({ opportunities: null });
         //   this.props.history.push("/opportunities");
         // });
-      }
+      
 
       editOpportunity(id){
         this.props.history.push(`/opportunities/${id}/edit`)
@@ -101,7 +103,7 @@ class OpportunityShowPage extends Component {
           return (
             <main className="main">
             {/* <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/> */}
-            <OpportunityDetails {...this.state.opportunities} />
+            <OpportunityDetails {...this.state.opportunities} deleteOpportunity={this.deleteOpportunity} editOpportunity={this.editOpportunity}/>
             <h2>Messages {userIsOwner()}</h2>
     
             {currentUser ? (
