@@ -11,17 +11,19 @@ function NewMessageForm(props) {
   }
 
   return (
-    <form className="ui form" onSubmit={handleMessageSubmit}>
-      <div className="field">
-        <label>Message</label>
-        <input type="text" name="message" id="message" />
-        <FormErrors forField="message" errors={props.errors} />
-      </div>
+    <div className="message-form">
+      <form className="ui form" onSubmit={handleMessageSubmit}>
+        <div className="field">
+          <label>Message</label>
+          <input type="text" name="message" id="message" />
+          <FormErrors forField="message" errors={props.errors} />
+        </div>
 
-      <button className="ui button" type="submit">
-        Send message
-      </button>
-    </form>
+        <button className="ui button" type="submit">
+          Send message
+        </button>
+      </form>
+    </div>
   );
 }
 
