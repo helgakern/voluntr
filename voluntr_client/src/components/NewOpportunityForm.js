@@ -48,6 +48,7 @@ function NewOpportunityForm(props) {
 
 
   return (
+    <div className="opp-form">
     <form className="ui form" onSubmit={handleSubmit}>
       <div className="field">
         <label>Title</label>
@@ -133,6 +134,7 @@ function NewOpportunityForm(props) {
         Submit
       </button>
     </form>
+    </div>
   );
 }
 
