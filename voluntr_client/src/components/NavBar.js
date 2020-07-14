@@ -32,7 +32,7 @@ function NavBar(props) {
             currentUser ? ( < >
           <NavLink exact to = "/opportunities/new" className = "item" > Create an Opportunity </NavLink> 
           <NavLink to = "/opportunities" onClick = {onSignOut} className = "item" > Sign Out </NavLink> 
-          <span className = "item" style = {{ color: "mediumslateblue"}}> Welcome { currentUser.full_name } 
+          <span className = "right item" style = {{ color: "mediumslateblue", fontSize: "1.5em"}}> Welcome { currentUser.full_name } 
           </span> 
           < />
       ) : ( 

@@ -76,7 +76,7 @@ function NewOpportunityForm(props) {
           />
           <FormErrors forField="description" errors={props.errors} />
         </div>
-        <Form.Field label="category" control="select">
+        <Form.Field label="Category" control="select">
           <option value="children">Children</option>
           <option value="community">Community</option>
           <option value="environment">Environment</option>
@@ -84,7 +84,7 @@ function NewOpportunityForm(props) {
           <option value="seniors">Seniors</option>
           <option value="teaching">Teaching</option>
         </Form.Field>
-        <div className="field">
+        {/* <div className="field">
           <label>Tags</label>
           <input type="text"
           name="tags" 
@@ -93,7 +93,7 @@ function NewOpportunityForm(props) {
           defaultValue={props.opportunity? props.opportunity.tags:null}
           required />
           <FormErrors forField="time" errors={props.errors} />
-        </div>
+        </div> */}
         <div className="field">
           <label>Date</label>
           <input

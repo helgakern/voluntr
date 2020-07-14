@@ -14,11 +14,10 @@ function OpportunityDetails(props) {
               
               <h3>{props.description}</h3>
               
-              <p><strong>Tag:</strong> {props.tags}</p>
-              <p>Date: {moment(props.date).format("DD/MM/YYYY")}</p>
-              <p>Time: {moment(props.time).format("HH:MM")}</p>
-              <p>Address: {props.address}</p>
-              <p>Contact information: {props.contact}</p>
+              <p><strong>Date:</strong> {moment(props.date).format("DD/MM/YYYY")}</p>
+              <p><strong>Time:</strong> {moment(props.time).format("HH:MM")}</p>
+              <p><strong>Address:</strong> {props.address}</p>
+              <p><strong>Contact information:</strong> {props.contact}</p>
               <p><CreatedAtShow created_at={moment(props.created_at).format("DD/MM/YYYY")} /></p>    
           </div>  
           <div className="opportunity-buttons">

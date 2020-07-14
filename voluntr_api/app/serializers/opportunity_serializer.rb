@@ -9,6 +9,7 @@ class OpportunitySerializer < ActiveModel::Serializer
       :contact,
       :longitude,
       :latitude,
+      :category,
       # :message
       )
       
