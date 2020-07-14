@@ -12,7 +12,9 @@ export default class ControlPanel extends Component {
       if (opportunities.errors) {
         this.setState({ errors: opportunities.errors });
       } else {
-        this.props.history.push(`/opportunities/${opportunities.id}`);
+        this.props.history.push("/opportunities");
+
+        // this.props.history.push(`/opportunities/${opportunities.id}`);
       }
     });
   };
