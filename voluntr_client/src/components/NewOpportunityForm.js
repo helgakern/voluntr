@@ -3,6 +3,7 @@ import { OpportunityEditPage } from "./OpportunityEditPage";
 import FormErrors from "./FormErrors/FormErrors";
 import * as ELG from "esri-leaflet-geocoder";
 import { Opportunities } from "../requests";
+import { Form } from 'semantic-ui-react';
 
 
 
@@ -75,6 +76,14 @@ function NewOpportunityForm(props) {
           />
           <FormErrors forField="description" errors={props.errors} />
         </div>
+        <Form.Field label="category" control="select">
+          <option value="children">Children</option>
+          <option value="community">Community</option>
+          <option value="environment">Environment</option>
+          <option value="pets">Pets</option>
+          <option value="seniors">Seniors</option>
+          <option value="teaching">Teaching</option>
+        </Form.Field>
         <div className="field">
           <label>Tags</label>
           <input type="text"
