@@ -29,7 +29,6 @@ export function SignUpPage(props) {
 
   return (
     <main>
-      <br />
       <form className="ui form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="first_name">First Name</label>

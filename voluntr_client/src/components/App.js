@@ -11,6 +11,7 @@ import ControlPanel from "./ControlPanel";
 import AuthRoute from "./AuthRoute";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { Welcome } from "./Welcome";
+import Footer from "./Footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -98,9 +99,9 @@ class App extends React.Component {
             <Route component={NotFoundPage} />
 
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
-      <Footer />
     );
   }
 }

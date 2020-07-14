@@ -99,7 +99,7 @@ class OpportunityShowPage extends Component {
           };
           console.log(this.state.opportunities)
           return (
-            <main>
+            <main className="main">
             {/* <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/> */}
             <OpportunityDetails {...this.state.opportunities} />
             <h2>Messages {userIsOwner()}</h2>

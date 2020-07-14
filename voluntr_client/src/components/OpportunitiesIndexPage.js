@@ -79,11 +79,11 @@ export class OpportunitiesIndexPage extends React.Component {
 
     return ( 
       <main className = "OpportunitiesIndexPage" >
-        <container >
-          <div style = {{ width: "59vw", height: "22vw", }}> 
+        
+          <div style = {{ width: "100vw", height: "60vh" }}> 
           {}    
-            <br /> 
-            <Map className = "opportunities-map" style = {{ height: '400px' }} center = {[this.state.opportunities[0].latitude, this.state.opportunities[0].longitude]} zoom = {11}>
+            
+            <Map className = "opportunities-map" style = {{ height: '60vh' }} center = {[this.state.opportunities[0].latitude, this.state.opportunities[0].longitude]} zoom = {11}>
               <TileLayer attribution = '&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors' url = "https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
             { this.state.opportunities.map(opportunity => ( 
                 <Marker position = {[opportunity.latitude, opportunity.longitude]} >
@@ -93,20 +93,23 @@ export class OpportunitiesIndexPage extends React.Component {
             } {} 
             </Map> 
           </div> 
-        </container> 
-        <container>  
-          <br />
+        
+          
           <div className = "ui list" style = {{listStyle: "none", paddingLeft: 0}}> 
           {filteredOpportunities.map(opportunities => ( 
-            <li className = "ui segment" key = { opportunities.id } >
-              <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" > 
+            <ul className="opportunities-list">
+            <li className = "ui segment opportunity-item" key = { opportunities.id } >
+              <h4>
+              <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" >
               { opportunities.title } 
               </Link> 
+              </h4> 
             </li>
+            </ul>
             ))
           } 
           </div> 
-        </container>  
+        
     </main>
     );
   }

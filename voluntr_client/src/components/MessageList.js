@@ -4,14 +4,14 @@ import MessageDetails from "./MessageDetails";
 export function MessageList(props) {
   const { messages } = props; 
   return (
-    <ul>
+    <ul className="messages">
       {messages.map(message => (
-        <li key={message.id}>
+        <li className="message" key={message.id}>
           
           <p> </p>
 
           <MessageDetails {...message} onDeleteClick={props.onMessageDeleteClick} />
-          <br />
+          
         </li>
       ))}
     </ul>

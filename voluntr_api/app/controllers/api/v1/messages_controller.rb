@@ -24,13 +24,12 @@ class Api::V1::MessagesController < ApplicationController
     end
   
     def create
-      byebug
       opportunity = Opportunity.find(params[:opportunity_id])
       message = Message.new message_params
       message.opportunity = opportunity
       message.user = current_user
       message.save!
-      render json: { message }
+      render json: { id: message.id }
     end
   
     def destroy

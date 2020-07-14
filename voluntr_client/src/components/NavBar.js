@@ -27,7 +27,7 @@ function NavBar(props) {
 
     {
       /* <div className="right menu"> */ } 
-          <NavLink to = "/" className = "item" > Home </NavLink> 
+          <NavLink to = "/" className = "item"> Home </NavLink> 
           <NavLink to = "/opportunities" className = "item" > Opportunities </NavLink> {
             currentUser ? ( < >
           <NavLink exact to = "/opportunities/new" className = "item" > Create an Opportunity </NavLink> 

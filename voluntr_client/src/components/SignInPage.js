@@ -41,7 +41,7 @@ class SignInPage extends Component {
     const { errors } = this.state;
     return (
       <main>
-        <br />
+        
         <div className="ui header">Sign In</div>
         <form className="ui form" onSubmit={this.createSession}>
           {errors.length > 0 ? (

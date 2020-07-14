@@ -9,7 +9,6 @@
 
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-image: linear-gradient(to top, #ace0f9 0%,  #fff1eb 100%);
   min-height: 100vh;
@@ -17,6 +16,10 @@ body {
     
 }
 
+.ui.container {
+  width: 100%;
+  
+}
 .opportunities-map {
   display: block;
   width: 100%;
@@ -35,14 +38,64 @@ svg {
   height: 300px;
 }
 
-h1 {
-  font-size: 2.5em;
+h1, h2, h3, h4 {
+
   font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
+  font-size: 8em;
+  margin-bottom: .5em;
+}
+
+h3 {
   font-size: 4em;
-  font-family: 'Montserrat', sans-serif;
+  margin-bottom: .5em;
+  color: #6c63ff;
+}
+
+h4 {
+  font-size: 3em;
+  margin-bottom: .5em;
+  color: #6c63ff;
+}
+
+p {
+  font-size: 2em;
+  line-height: 1.3em;
+}
+.opportunity {
+  display: flex;
+  justify-content: space-between;
+}
+
+.opportunity-details {
+  width: 50%;
+  padding: 3em;
+  min-height: 100vh;
+
+}
+
+.opportunity-buttons {
+  width: 50%;
+  height: 100vh;
+  background: url(../src/images/wireframe/dog-walking.jpg);
+  background-size: cover;
+  position: sticky;
+  top: 0;
+
+}
+
+
+.opportunities-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.opportunity-item {
+width: 25%;
+padding: 3em;
+background-color: hotpink;
 }
 
 
