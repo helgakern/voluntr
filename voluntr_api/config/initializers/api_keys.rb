@@ -1,2 +1,2 @@
-ENV["EMAIL_USERNAME"] = "johndoe@gmail.com"
-ENV["EMAIL_PASSWORD"] = "supersecret"
+ENV["EMAIL_USERNAME"] = "helgakern@gmail.com"
+ENV["EMAIL_PASSWORD"] = "Edgar1925Baptista?!"
