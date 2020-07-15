@@ -30,6 +30,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def create
+      
       opportunity = Opportunity.new opportunity_params
       opportunity.user = current_user
       opportunity.save!
@@ -73,7 +74,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def opportunity_params
-      params.require(:opportunity).permit(:title, :description, :date, :time, :address, :contact, :tags)
+      params.require(:opportunity).permit(:title, :description, :date, :time, :address, :contact, :category)
     end
   
     def record_not_found
