@@ -81,24 +81,24 @@ export class OpportunitiesIndexPage extends React.Component {
       <main className = "OpportunitiesIndexPage" >
         
           <div style = {{ width: "100vw", height: "60vh" }}> 
-          {}    
+              
             
             <Map className = "opportunities-map" style = {{ height: '60vh' }} center = {[this.state.opportunities[0].latitude, this.state.opportunities[0].longitude]} zoom = {11}>
               <TileLayer attribution = '&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors' url = "https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
             { this.state.opportunities.map(opportunity => ( 
                 <Marker position = {[opportunity.latitude, opportunity.longitude]} >
-                  <Popup > {opportunity.address, opportunity.title} < /Popup>      
+                  <Popup > {opportunity.address, opportunity.title} </Popup>      
                 </Marker>
             ))
-            } {} 
+            }
             </Map> 
           </div> 
         
-          
-          <div className = "ui list" style = {{listStyle: "none", paddingLeft: 0}}> 
+        <div>  
+          <div className = "opportunities-div" style = {{listStyle: "none", paddingLeft: 0}}> 
           {filteredOpportunities.map(opportunities => ( 
             <ul className="opportunities-list">
-            <li className = "ui segment opportunity-item" key = { opportunities.id } >
+            <li className = "opportunity-item" key = { opportunities.id } >
               <h4>
               <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" >
               { opportunities.title } 
@@ -109,6 +109,7 @@ export class OpportunitiesIndexPage extends React.Component {
             ))
           } 
           </div> 
+          </div>
         
     </main>
     );

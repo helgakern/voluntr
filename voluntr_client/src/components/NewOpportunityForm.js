@@ -18,35 +18,13 @@ function NewOpportunityForm(props) {
       const opportunity = {
       title: fd.get("title"),
       description: fd.get("description"),
-      tags: fd.get("tags"),
+      category: fd.get("category"),  
       date: fd.get("date"),
       time: fd.get("time"),
       address: fd.get("address"),
       contact: fd.get("contact"),
       }
-    
-      
-    getCoordinates(opportunity)
-    currentTarget.reset();
   }
-
-  async function getCoordinates(opportunity){
-    
-      await ELG.geocode().text(opportunity.where).run(async function (err, results, response) {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        
-        opportunity.coordinates = [results.results[0].latlng.lat, results.results[0].latlng.lng]
-        console.log(opportunity)
-        Opportunities.create(opportunity)
-        
-      })
-        
-  }
-
-
 
   return (
     <div className="opp-form">
@@ -76,7 +54,7 @@ function NewOpportunityForm(props) {
           />
           <FormErrors forField="description" errors={props.errors} />
         </div>
-        <Form.Field label="Category" control="select">
+        <Form.Field label="Category" control="select" id="category" name="category">
           <option value="children">Children</option>
           <option value="community">Community</option>
           <option value="environment">Environment</option>
@@ -84,16 +62,6 @@ function NewOpportunityForm(props) {
           <option value="seniors">Seniors</option>
           <option value="teaching">Teaching</option>
         </Form.Field>
-        {/* <div className="field">
-          <label>Tags</label>
-          <input type="text"
-          name="tags" 
-          id="tags" 
-          placeholder="Enter tags separated by commas" 
-          defaultValue={props.opportunity? props.opportunity.tags:null}
-          required />
-          <FormErrors forField="time" errors={props.errors} />
-        </div> */}
         <div className="field">
           <label>Date</label>
           <input

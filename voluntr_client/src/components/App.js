@@ -56,7 +56,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="ui container App">
           <NavBar currentUser={currentUser} onSignOut={this.signOut} />
-      
+          <div className="opportunities-div">
           <Switch>
             <Route path="/" exact component={Welcome} />
 
@@ -99,8 +99,10 @@ class App extends React.Component {
             <Route component={NotFoundPage} />
 
           </Switch>
-          
+          </div>
+          <div>
           <Footer />
+          </div>
         </div>
       </BrowserRouter>
       
