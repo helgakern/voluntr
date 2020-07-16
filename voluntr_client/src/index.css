@@ -35,6 +35,9 @@ svg {
 
 .spinner {
   height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  background: transparent;
 }
 
 h1, h2, h3, h4 {
@@ -71,15 +74,15 @@ p {
 }
 
 .opportunity {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .opportunity-details {
-  width: 50%;
+  width: 70%;
   padding: 3em;
   min-height: 100vh;
-
 }
 
 .opportunity-buttons {
@@ -89,7 +92,8 @@ p {
   background-repeat: no-repeat;
   position: sticky;
   top: 0;
-
+  /* margin-left: auto;
+  margin-right: 0; */
 }
 
 .opportunities-list {
@@ -144,6 +148,9 @@ p {
   position:fixed;
 }
 
+.main {
+  width: 100%;
+}
 
 ul {
   display: flex;
@@ -162,5 +169,13 @@ ul {
 
 .message-form {
   margin-bottom: 3em;
+}
 
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-title {
+  padding-left: .5em;
 }

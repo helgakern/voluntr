@@ -24,6 +24,7 @@ function NewOpportunityForm(props) {
       address: fd.get("address"),
       contact: fd.get("contact"),
       }
+      props.onSubmit(opportunity)
   }
 
   return (

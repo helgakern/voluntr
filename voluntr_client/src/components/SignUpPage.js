@@ -22,7 +22,7 @@ export function SignUpPage(props) {
           if( typeof props.onSignUp === "function") {
               props.onSignUp();
           }
-        props.history.push("/questions");
+        props.history.push("/opportunities");
       }
     });
   }

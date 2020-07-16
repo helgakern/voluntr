@@ -5,12 +5,12 @@ import { OpportunityShowPage } from "./OpportunityShowPage";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { NewMessageForm } from "./NewMessageForm";
 import moment from "moment";
-import Children from "../images/wireframe/children.svg";
-import Community from "../images/wireframe/community.svg";
-import Environment from "../images/wireframe/environment.svg";
-import pets from "../images/wireframe/pets.svg";
-import Seniors from "../images/wireframe/seniors.svg";
-import Teaching from "../images/wireframe/teaching.svg";
+import Children from "../images/wireframe/children.jpg";
+import Community from "../images/wireframe/community.jpg";
+import Environment from "../images/wireframe/environment.jpg";
+import pets from "../images/wireframe/pets.jpg";
+import Seniors from "../images/wireframe/seniors.jpg";
+import Teaching from "../images/wireframe/teaching.jpg";
 
 
 
@@ -24,6 +24,8 @@ function OpportunityDetails(props) {
         break;
     
       default:
+        picture = pets
+
         break;
     }
   }

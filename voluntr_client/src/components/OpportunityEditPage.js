@@ -27,6 +27,7 @@ export const OpportunityEditPage = props => {
     // };
     // console.log(event);
     Opportunities.update(props.match.params.id, updatedOpportunity).then(data => {
+      console.log("data", data)
       if (data.errors) {
         setErrors(data.errors);
       } else {

@@ -18,7 +18,6 @@ const Opportunities = {
   },
   // creating an opportunity
   create(params) {
-    console.log(params)
     return fetch(`${BASE_URL}/opportunities`, {
       method: "POST",
       credentials: "include",
@@ -26,7 +25,7 @@ const Opportunities = {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(params)
-    }).then(res => res.json());
+    }).then(res => res.text());
   },
   // edit an opportunity
   update(id, params) {
@@ -37,7 +36,7 @@ const Opportunities = {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(params)
-    }).then(res => res.json());
+    }).then(res => res.text());
   },
   destroy(id) {
     return fetch(`${BASE_URL}/opportunities/${id}`, {
@@ -70,7 +69,6 @@ const Session = {
 
 const Message = {
   create(id, params) {
-    console.log(params)
     return fetch(`${BASE_URL}/opportunities/${id}/messages`, {
       method: "POST",
       credentials: "include",

@@ -21,12 +21,17 @@ class OpportunityShowPage extends Component {
     }
 
     createMessage = (id, params) => {
-      console.log(params)
         Message.create(id, params).then(message => {
-          console.log(message)
             if (message.errors) {
                 this.setState({ errors: message.errors });
             }
+            // this.opportunities.messages = message
+            const updatedOpportunities = this.state.opportunities
+            updatedOpportunities.messages = message
+            this.setState({
+              opportunities: message
+            })
+            console.log(message)
         });
     };
 
@@ -40,7 +45,6 @@ class OpportunityShowPage extends Component {
 
       componentDidMount() {
         Opportunities.one(this.props.match.params.id).then(opportunities => {
-          console.log(opportunities)
           this.setState({
             opportunities: opportunities,
             isLoading: false
@@ -50,22 +54,12 @@ class OpportunityShowPage extends Component {
     
       deleteOpportunity(id) {
         if(window.confirm("Are you sure you want to delete?")){
-          // fetch('http://localhost:3000/api/v1/opportunities/'+id,{
-          //   method: 'DELETE',
-          //   header:{'Accept': 'application/json', 
-          //   'Content-Type': 'application/json'
-          // }
           Opportunities.destroy(id)
           .then(() => {
             this.props.history.push("/opportunities");
           })
           }
         }
-        // Opportunities.destroy(id).then(() => {
-        //   this.setState({ opportunities: null });
-        //   this.props.history.push("/opportunities");
-        // });
-      
 
       editOpportunity(id){
         this.props.history.push(`/opportunities/${id}/edit`)
@@ -104,7 +98,7 @@ class OpportunityShowPage extends Component {
             <main className="main">
             {/* <OpportunityDetails {...this.state.opportunities} editOpportunity={this.editOpportunity} deleteOpportunity={this.deleteOpportunity}/> */}
             <OpportunityDetails {...this.state.opportunities} deleteOpportunity={this.deleteOpportunity} editOpportunity={this.editOpportunity}/>
-            <h2>Messages {userIsOwner()}</h2>
+            <h2 className="messages-title">Messages {userIsOwner()}</h2>
     
             {currentUser ? (
               <>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Opportunities } from "../requests";
 import NewOpportunityForm from "./NewOpportunityForm";
 
@@ -9,11 +8,12 @@ export default class ControlPanel extends Component {
   };
   createOpportunity = params => {
     Opportunities.create(params).then(opportunities => {
-      if (opportunities.errors) {
-        this.setState({ errors: opportunities.errors });
-      } else {
+      // console.log(opportunities)
+      // if (opportunities.errors) {
+      //   this.setState({ errors: opportunities.errors });
+      // } else {
         this.props.history.push(`/opportunities`);
-      }
+      // }
     });
   };
 

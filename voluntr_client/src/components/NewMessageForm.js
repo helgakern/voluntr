@@ -8,6 +8,7 @@ function NewMessageForm(props) {
     const fd = new FormData(currentTarget);
     let text = fd.get("message");
     props.onSubmit(props.opportunities.id, { body: fd.get("message") });
+    currentTarget.reset()
   }
 
   return (

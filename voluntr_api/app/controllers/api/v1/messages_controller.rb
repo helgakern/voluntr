@@ -29,7 +29,12 @@ class Api::V1::MessagesController < ApplicationController
       message.opportunity = opportunity
       message.user = current_user
       message.save!
-      render json: { id: message.id }
+      messages = Message.order(created_at: :desc)
+      render(
+        json: opportunity,
+     
+        include: [ :owner, {messages: [ :owner ]} ]
+      )
     end
   
     def destroy
