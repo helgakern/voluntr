@@ -2,10 +2,25 @@ import React, { Component } from "react";
 import OpportunityDetails from "./OpportunityDetails";
 import { Opportunities, Message, Publish } from "../requests";
 import { MessageList } from "./MessageList";
-import Spinner from "./Spinner";
+import { Spinner } from "./Spinner";
 import NewMessageForm from "./NewMessageForm";
 import PublishForm from "./PublishForm";
 import { Button } from "semantic-ui-react";
+import { ClipLoader } from "react-spinners";
+import { css } from "@emotion/core";
+
+const override = css`
+position: fixed;
+z-index: 999;
+height: 2em;
+width: 2em;
+overflow: visible;
+margin: auto;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+`;
 
 class OpportunityShowPage extends Component {
     constructor(props){
@@ -76,7 +91,7 @@ class OpportunityShowPage extends Component {
 
       render() {
           if (this.state.isLoading){
-              return <Spinner />;
+              return <ClipLoader css={override} size={150}/>;
           }
 
           const currentUser = this.props.currentUser;

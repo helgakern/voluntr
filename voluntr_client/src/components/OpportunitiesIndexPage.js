@@ -3,11 +3,27 @@ import { Link } from "react-router-dom";
 import CreatedAtShow from "./CreatedAtShow"
 import ControlPanel from "./ControlPanel";
 import { Opportunities } from "../requests";
-import Spinner from "./Spinner";
+import { Spinner } from "./Spinner";
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import * as ELG from "esri-leaflet-geocoder";
+import { ClipLoader } from "react-spinners";
+import { css } from "@emotion/core";
+
+
+const override = css`
+position: fixed;
+z-index: 999;
+height: 2em;
+width: 2em;
+overflow: visible;
+margin: auto;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+`;
 
 
 export class OpportunitiesIndexPage extends React.Component {
@@ -56,6 +72,7 @@ export class OpportunitiesIndexPage extends React.Component {
     return results
   }
 
+  
 
   deleteOpportunity(id) {
     Opportunities.destroy(id).then(() => {
@@ -66,7 +83,7 @@ export class OpportunitiesIndexPage extends React.Component {
   }
   render() {
     if (this.state.isLoading) {
-      return <Spinner / > ;
+      return <ClipLoader css={override} size={150}/> ;
     } 
     const { showAll = false } = this.props;
     const filteredOpportunities = this.state.opportunities.filter((q, index) => {

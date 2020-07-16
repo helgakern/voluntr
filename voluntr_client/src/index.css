@@ -33,12 +33,6 @@ svg {
   margin: auto;
 }
 
-.spinner {
-  height: 300px;
-  width: 300px;
-  margin: 0 auto;
-  background: transparent;
-}
 
 h1, h2, h3, h4 {
 
@@ -124,8 +118,11 @@ p {
 
 }
 
-.ui form {
+.ui.form {
+  /* display: flex;
+  flex-direction: column;   */
   padding: 3em;
+  width: 35em;
 
 }
 
@@ -133,6 +130,12 @@ p {
   padding: 3em;
 
 }
+
+.ui-header-sign-up {
+  padding: 3em;
+
+}
+
 
 .main-footer {
   color: white;

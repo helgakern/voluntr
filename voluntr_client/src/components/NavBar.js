@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink /* Link */ } from "react-router-dom";
+import logo from "../images/wireframe/logo.png"
+
 
 
 function NavBar(props) {
@@ -22,12 +24,14 @@ function NavBar(props) {
       <div className = "ui large inverted pointing secondary menu" >
         <div className = "ui container" >
           {/* <NavLink to = "/" className = "active item" >
-          <img src="../src/images/wireframe/logo.jpeg" height = "50px"  />
+          <div className="logo">
+            <img src={logo} alt="logo"/>
+          </div>  
           </NavLink> */}
 
     {
       /* <div className="right menu"> */ } 
-          <NavLink to = "/" className = "item"> Home </NavLink> 
+          {/* <NavLink to = "/" className = "item"> Home </NavLink>  */}
           <NavLink to = "/opportunities" className = "item" > Opportunities </NavLink> {
             currentUser ? ( < >
           <NavLink exact to = "/opportunities/new" className = "item" > Create an Opportunity </NavLink> 

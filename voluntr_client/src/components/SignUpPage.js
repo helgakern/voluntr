@@ -29,7 +29,7 @@ export function SignUpPage(props) {
 
   return (
     <main>
-      <div className="ui-header-sign">
+      <div className="ui-header-sign-up">
         <h4>Sign Up</h4>
       </div>
 

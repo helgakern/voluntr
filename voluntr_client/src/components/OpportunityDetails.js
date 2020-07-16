@@ -5,12 +5,12 @@ import { OpportunityShowPage } from "./OpportunityShowPage";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { NewMessageForm } from "./NewMessageForm";
 import moment from "moment";
-import Children from "../images/wireframe/children.jpg";
-import Community from "../images/wireframe/community.jpg";
-import Environment from "../images/wireframe/environment.jpg";
+import children from "../images/wireframe/children.jpg";
+import community from "../images/wireframe/community.jpg";
+import environment from "../images/wireframe/environment.jpg";
 import pets from "../images/wireframe/pets.jpg";
-import Seniors from "../images/wireframe/seniors.jpg";
-import Teaching from "../images/wireframe/teaching.jpg";
+import seniors from "../images/wireframe/seniors.jpg";
+import teaching from "../images/wireframe/teaching.jpg";
 
 
 
@@ -22,7 +22,21 @@ function OpportunityDetails(props) {
       case "pets":
         picture = pets
         break;
-    
+      case "seniors":
+        picture = seniors
+        break;
+      case "teaching":
+        picture = teaching
+        break;
+      case "children":
+        picture = children
+        break;
+      case "community":
+        picture = community 
+        break;
+      case "environment":
+        picture = environment
+        break;
       default:
         picture = pets
 

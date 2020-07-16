@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Opportunities } from "../requests";
 import { FormErrors } from "./FormErrors/FormErrors";
-import Spinner from "./Spinner";
+import { Spinner } from "./Spinner";
 import NewOpportunityForm from "./NewOpportunityForm";
+import { ClipLoader } from "react-spinners";
+
 
 export const OpportunityEditPage = props => {
   const [errors, setErrors] = useState([]);

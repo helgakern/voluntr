@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "../images/wireframe/logo.png"
+
 
 export class Welcome extends React.Component {
   constructor(props) {
@@ -11,6 +13,10 @@ export class Welcome extends React.Component {
       <main className="welcome">
           
           <h1>VOLUNTR</h1> 
+          {/* <div className="img-logo"> */}
+          {/* <img src={logo} alt="logo"/>
+          </div> */}
+
           
           <h2>One-On-One Volunteer App</h2>
             
