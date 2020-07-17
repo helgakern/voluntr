@@ -1,21 +1,17 @@
 <h2>Hi, <%= @opportunity_owner.first_name %></h2>
 
 <p>
-<%= @answer.user.first_name %> answered your opportunity: <br>
+<%= @message.user.first_name %> sent you a message about your opportunity: <br>
 <p><%= @opportunity.title %></p>
 </p>
 
 <p>
-    The answer is: <br>
-    <p><%= @anwer.body %></p>
+    The message is: <br>
+    <p><%= @message.body %></p>
 </p>
-
-<%= link_to(
-    "Click here to view your opportunity",
-    opportunity_url(@opportunity)
-)
-%>
-
+Click here to view your opportunity
+<%= link_to("Click here to view your opportunity", api_v1_opportunity_url(@opportunity))%>
+Click here <%= @url%>
 <p>
     Cheers, <br>
     Voluntr Team

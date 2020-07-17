@@ -29,10 +29,10 @@ class Api::V1::MessagesController < ApplicationController
       message.opportunity = opportunity
       message.user = current_user
       message.save!
-      messages = Message.order(created_at: :desc)
+      OpportunityMailer.notify_opportunity_owner(message).deliver_now
+      messages = Message.order(created_at: :asc)
       render(
         json: opportunity,
-     
         include: [ :owner, {messages: [ :owner ]} ]
       )
     end

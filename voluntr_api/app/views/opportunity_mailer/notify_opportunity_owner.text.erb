@@ -1,10 +1,10 @@
 Hi, <%= @opportunity_owner.first_name %>
 
-<%= @answer.user.first_name %> answered your opportunity:
+<%= @message.user.first_name %> answered your opportunity:
 <%= @opportunity.title %>
 
-The answer is:
-<%= @anwer.body %>
+The message is:
+<%= @message.body %>
 
 Find your opportunity at: <%= opportunity_url(@opportunity) %>
 

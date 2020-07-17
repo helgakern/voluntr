@@ -7,14 +7,14 @@ class OpportunityMailer < ApplicationMailer
         )
     end
 
-    def notify_opportunity_owner(answer)
-        @answer = answer
-        @opportunity = answer.opportunity
-        @opportunity_owner = opportunity.user
-        
+    def notify_opportunity_owner(message)
+        @message = message
+        @opportunity = message.opportunity
+        @opportunity_owner = @opportunity.user
+        @url = `http://localhost:8080/opportunities/${@opportunity.id}`
         mail(
-            to: @opportunity_owner.email
-            subject: "#{answer.user.first_name} answered your opportunity!"
+            to: @opportunity_owner.email,
+            subject: "#{message.user.first_name} sent you a message about your opportunity!"
         )
     end
 end
