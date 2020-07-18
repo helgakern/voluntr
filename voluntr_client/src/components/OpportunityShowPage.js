@@ -60,6 +60,7 @@ class OpportunityShowPage extends Component {
 
       componentDidMount() {
         Opportunities.one(this.props.match.params.id).then(opportunities => {
+          console.log(opportunities)
           this.setState({
             opportunities: opportunities,
             isLoading: false

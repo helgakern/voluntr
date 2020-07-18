@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_222509) do
+ActiveRecord::Schema.define(version: 2020_07_18_013539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,23 +25,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_222509) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "opportunities", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "date"
-    t.datetime "time"
-    t.text "contact"
-    t.string "tags"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.string "aasm_state"
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.string "category"
-    t.index ["user_id"], name: "index_opportunities_on_user_id"
-  end
+# Could not dump table "opportunities" because of following StandardError
+#   Unknown type 'time with time zone' for column 'time'
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"

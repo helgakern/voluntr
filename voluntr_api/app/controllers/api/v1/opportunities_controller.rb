@@ -50,9 +50,8 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def update
-      byebug
-      if @opportunity.update opportunity_params
-        render json: { id: @opportunity.id }
+      if @opportunities.update opportunity_params
+        render json: { id: @opportunities.id }
       else
         render(
           json: { errors: opportunity.errors },

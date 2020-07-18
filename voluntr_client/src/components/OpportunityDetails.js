@@ -4,6 +4,7 @@ import { Opportunities } from "../requests";
 import { OpportunityShowPage } from "./OpportunityShowPage";
 import { OpportunityEditPage } from "./OpportunityEditPage";
 import { NewMessageForm } from "./NewMessageForm";
+import { format } from "date-fns";
 import moment from "moment";
 import children from "../images/wireframe/children.jpg";
 import community from "../images/wireframe/community.jpg";
@@ -51,9 +52,8 @@ function OpportunityDetails(props) {
               <h2>{props.title}</h2>
               
               <h3>{props.description}</h3>
-              
-              <p><strong>Date:</strong> {moment(props.date).format("DD/MM/YYYY")}</p>
-              <p><strong>Time:</strong> {moment(props.time).format("HH:MM")}</p>
+              <p><strong>Date:</strong> {format( new Date (props.date), "MM-dd-yyyy")}</p>
+              <p><strong>Time:</strong> {format( new Date (props.time), "h-mm-a z")}</p>
               <p><strong>Address:</strong> {props.address}</p>
               <p><strong>Contact information:</strong> {props.contact}</p>
               <p><CreatedAtShow created_at={moment(props.created_at).format("DD/MM/YYYY")} /></p>    

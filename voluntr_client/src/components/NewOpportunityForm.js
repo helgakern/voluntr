@@ -77,7 +77,7 @@ function NewOpportunityForm(props) {
         </div>
         <div className="field">
           <label>Time</label>
-          <input type="text" 
+          <input type="time" 
           name="time" 
           id="time" 
           placeholder="2:00 PM" 
