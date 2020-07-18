@@ -52,8 +52,10 @@ function OpportunityDetails(props) {
               <h2>{props.title}</h2>
               
               <h3>{props.description}</h3>
-              <p><strong>Date:</strong> {format( new Date (props.date), "MM-dd-yyyy")}</p>
-              <p><strong>Time:</strong> {format( new Date (props.time), "h-mm-a z")}</p>
+              {/* format( new Date (props.date), "MM-dd-yyyy") */}
+              <p><strong>Date:</strong> {props.date}</p>
+              <p><strong>Time:</strong> {format( new Date (props.time), "h-mm-a")}</p>
+              {/* <p><strong>Time:</strong> {(new Date(props.time)).getTime()}</p> */}
               <p><strong>Address:</strong> {props.address}</p>
               <p><strong>Contact information:</strong> {props.contact}</p>
               <p><CreatedAtShow created_at={moment(props.created_at).format("DD/MM/YYYY")} /></p>    
