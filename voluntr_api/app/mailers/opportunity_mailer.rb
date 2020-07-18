@@ -11,7 +11,6 @@ class OpportunityMailer < ApplicationMailer
         @message = message
         @opportunity = message.opportunity
         @opportunity_owner = @opportunity.user
-        @url = `http://localhost:8080/opportunities/${@opportunity.id}`
         mail(
             to: @opportunity_owner.email,
             subject: "#{message.user.first_name} sent you a message about your opportunity!"

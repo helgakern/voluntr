@@ -6,7 +6,9 @@ Hi, <%= @opportunity_owner.first_name %>
 The message is:
 <%= @message.body %>
 
-Find your opportunity at: <%= opportunity_url(@opportunity) %>
+To view your opportunity
+<a href='http://localhost:8080/opportunities/<%=@opportunity.id%>'> click here </a> 
+
 
 Cheers,
 Voluntr Team

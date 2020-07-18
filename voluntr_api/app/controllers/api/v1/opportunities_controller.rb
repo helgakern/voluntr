@@ -50,6 +50,7 @@ class Api::V1::OpportunitiesController < Api::ApplicationController
     end
   
     def update
+      byebug
       if @opportunity.update opportunity_params
         render json: { id: @opportunity.id }
       else

@@ -29,6 +29,7 @@ const Opportunities = {
   },
   // edit an opportunity
   update(id, params) {
+    console.log(id)
     return fetch(`${BASE_URL}/opportunities/${id}`, {
       method: "PATCH",
       credentials: "include",
@@ -36,7 +37,7 @@ const Opportunities = {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(params)
-    }).then(res => res.text());
+    }).then(res => res.json());
   },
   destroy(id) {
     return fetch(`${BASE_URL}/opportunities/${id}`, {

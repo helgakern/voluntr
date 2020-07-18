@@ -27,7 +27,7 @@ export const OpportunityEditPage = props => {
     //   contact: fd.get("contact"),
     //   created_at: fd.get("created_at")
     // };
-    // console.log(event);
+    console.log(props.match.params.id);
     Opportunities.update(props.match.params.id, updatedOpportunity).then(data => {
       console.log("data", data)
       if (data.errors) {

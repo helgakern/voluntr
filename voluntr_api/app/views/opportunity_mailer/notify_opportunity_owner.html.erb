@@ -9,9 +9,10 @@
     The message is: <br>
     <p><%= @message.body %></p>
 </p>
-Click here to view your opportunity
-<%= link_to("Click here to view your opportunity", api_v1_opportunity_url(@opportunity))%>
-Click here <%= @url%>
+To view your opportunity
+<a href='http://localhost:8080/opportunities/<%=@opportunity.id%>'> click here </a> 
+
+
 <p>
     Cheers, <br>
     Voluntr Team
