@@ -10,6 +10,8 @@ import L from "leaflet";
 import * as ELG from "esri-leaflet-geocoder";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
+import moment from "moment";
+
 
 
 const override = css`
@@ -125,7 +127,8 @@ export class OpportunitiesIndexPage extends React.Component {
               <li className = "opportunity-" key = { opportunities.id } >
                 <h4>
               <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" >
-              { opportunities.date } 
+              {moment(opportunities.date).format("DD/MM/YYYY")}
+              {/* { opportunities.date }  */}
               </Link> 
               </h4> 
             </li>
