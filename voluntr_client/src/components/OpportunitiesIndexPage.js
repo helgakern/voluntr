@@ -112,7 +112,7 @@ export class OpportunitiesIndexPage extends React.Component {
           </div> 
         
         <div>  
-          <div className = "opportunities-div" style = {{listStyle: "none", paddingLeft: 0}}> 
+          <div className = "opportunities-div" style = {{listStyle: "none", paddingLeft: 0}}>
           {filteredOpportunities.map(opportunities => ( 
             <ul className="opportunities-list">
             <li className = "opportunity-item" key = { opportunities.id } >
@@ -126,7 +126,7 @@ export class OpportunitiesIndexPage extends React.Component {
             ))
           } 
           </div> 
-          </div>
+        </div>
         
     </main>
     );

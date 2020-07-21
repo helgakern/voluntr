@@ -16,7 +16,8 @@ function NewMessageForm(props) {
       <form className="ui form" onSubmit={handleMessageSubmit}>
         <div className="field">
           <label>Message</label>
-          <input type="text" name="message" id="message" />
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+          {/* <input type="text" name="message" id="message" /> */}
           <FormErrors forField="message" errors={props.errors} />
         </div>
 

@@ -40,7 +40,7 @@ class SignInPage extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <main>
+      <main className="main-sing-up">
         
         <div className="ui-header-sign">
           <h4>Sign In</h4>
