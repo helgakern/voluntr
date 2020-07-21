@@ -15,12 +15,9 @@ function NewOpportunityForm(props) {
 
     const fd = new FormData(currentTarget);
       const time = fd.get("time")
-      // console.log(time)
       const timeArray = time.split(":")
       let formattingTime = new Date()
       formattingTime = new Date (formattingTime.setHours(timeArray[0], timeArray[1]))
-      // console.log(timeArray)
-      // console.log(formattingTime)
       const opportunity = {
       title: fd.get("title"),
       description: fd.get("description"),
