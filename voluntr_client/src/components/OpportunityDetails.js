@@ -44,6 +44,13 @@ function OpportunityDetails(props) {
         break;
     }
   }
+  
+  function newTime(){
+    if(props.time)
+    {return new Date(props.time).toLocaleTimeString("GMT")}
+  }
+  console.log(newTime());
+
   categoryPicture()
   if(!picture){return "loading"} 
   return (
@@ -54,7 +61,8 @@ function OpportunityDetails(props) {
               <h3>{props.description}</h3>
               {/* format( new Date (props.date), "MM-dd-yyyy") */}
               <p><strong>Date:</strong> {props.date}</p>
-              <p><strong>Time:</strong> {format( new Date (props.time), "h-mm-a")}</p>
+              <p><strong>Time:</strong> {format( new Date (props.time), "h:mm a")}</p>
+
               {/* <p><strong>Time:</strong> {(new Date(props.time)).getTime()}</p> */}
               <p><strong>Address:</strong> {props.address}</p>
               <p><strong>Contact information:</strong> {props.contact}</p>

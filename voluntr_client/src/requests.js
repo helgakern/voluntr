@@ -29,7 +29,7 @@ const Opportunities = {
   },
   // edit an opportunity
   update(id, params) {
-    console.log(id)
+    console.log(params)
     return fetch(`${BASE_URL}/opportunities/${id}`, {
       method: "PATCH",
       credentials: "include",
