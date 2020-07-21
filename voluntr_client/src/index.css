@@ -184,27 +184,34 @@ ul {
 }
 
 .img-logo {
+  float: left;
+  width: 25%;
   margin: 0;
   height: 5%;
+  z-index: 0;
 }
 
 .welcome-text {
-  /* margin-top: 15em; */
-  margin-bottom: 10em;
+  margin-top: 30em;
+  margin-left: 3em;
+  /* margin-bottom: 10em; */
+  z-index: 1;
 }
 
-.welcome-img {
-  /* width: 50%; */
-  width: 80%;
-  margin-left: 70%;
+.hero-img {
+  float: right;
+  width: 60%;
+  /* margin-left: 70%; */
   margin-right: 0;
   border-right: 0;
   padding-right: 0;
   margin-top: 0;
   top: 0;
+  z-index: -1;
 }
 
 .text-h3 {
+  font-size: 3.3em;
   color: black;
   margin: 0;
   border: 0;
