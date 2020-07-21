@@ -5,10 +5,8 @@
 <p><%= @opportunity.title %></p>
 </p>
 
-<p>
-    The message is: <br>
-    <p><%= @message.body %></p>
-</p>
+<p><%= @message.body %></>
+<p>Reply to <%= @message.user.first_name %> email: <%=@message.user.email%>
 To view your opportunity
 <a href='http://localhost:8080/opportunities/<%=@opportunity.id%>'> click here </a> 
 

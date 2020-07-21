@@ -3,8 +3,9 @@ Hi, <%= @opportunity_owner.first_name %>
 <%= @message.user.first_name %> answered your opportunity:
 <%= @opportunity.title %>
 
-The message is:
 <%= @message.body %>
+Reply to <%= @message.user.first_name %> email: <%=@message.user.email%>
+
 
 To view your opportunity
 <a href='http://localhost:8080/opportunities/<%=@opportunity.id%>'> click here </a> 

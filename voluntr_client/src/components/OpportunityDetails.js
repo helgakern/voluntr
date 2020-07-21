@@ -60,7 +60,7 @@ function OpportunityDetails(props) {
               
               <h3>{props.description}</h3>
               {/* format( new Date (props.date), "MM-dd-yyyy") */}
-              <p><strong>Date:</strong> {props.date}</p>
+              <p><strong>Date:</strong> {props.date} </p>
               <p><strong>Time:</strong> {format( new Date (props.time), "h:mm a")}</p>
 
               {/* <p><strong>Time:</strong> {(new Date(props.time)).getTime()}</p> */}
