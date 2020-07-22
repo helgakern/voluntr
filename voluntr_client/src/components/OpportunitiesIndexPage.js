@@ -106,7 +106,7 @@ export class OpportunitiesIndexPage extends React.Component {
               <TileLayer attribution = '&copy; <a href="http://orm.org/copyright">OpenStreetMap</a> contributors' url = "https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
             { this.state.opportunities.map(opportunity => ( 
                 <Marker position = {[opportunity.latitude, opportunity.longitude]} >
-                  <Popup > {opportunity.title} </Popup>      
+                  <Popup> {opportunity.title} </Popup>      
                 </Marker>
             ))
             }

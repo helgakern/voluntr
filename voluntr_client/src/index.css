@@ -35,14 +35,12 @@ svg {
 
 
 h1, h2, h3, h4 {
-
   font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   font-size: 9em;
   color: #6c63ff;
-
 }
 
 h2 {
@@ -86,8 +84,6 @@ p {
   background-repeat: no-repeat;
   position: sticky;
   top: 0;
-  /* margin-left: auto;
-  margin-right: 0; */
 }
 
 .opportunities-list {
@@ -114,27 +110,24 @@ p {
 }
 
 .welcome {
-  padding: 3em;
-
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 20%;
 }
 
 
 .ui.form {
-  /* display: flex;
-  flex-direction: column;   */
   padding: 3em;
   width: 35em;
-
 }
 
 .ui-header-sign {
   padding: 3em;
-  
 }
 
 .ui-header-sign-up {
   padding: 3em;
-
 }
 
 
@@ -160,7 +153,6 @@ ul {
   display: flex;
   margin: 0 5px;
   list-style-type: none;
-
 }
 
 .welcome {
@@ -193,10 +185,8 @@ ul {
 }
 
 .welcome-text {
-  margin-top: 30em;
-  margin-left: 3em;
-  /* margin-bottom: 10em; */
-  z-index: 1;
+  margin-right: 10em;
+  margin-top: 15em; 
 }
 
 .svg-container {
@@ -213,10 +203,6 @@ ul {
 }
 
 .text-h3 {
-  font-size: 3.3em;
+  font-size: 4em;
   color: black;
-  margin: 0;
-  border: 0;
-  padding: 0;
-
 }
