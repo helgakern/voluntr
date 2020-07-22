@@ -5,7 +5,6 @@ import { MessageList } from "./MessageList";
 import { Spinner } from "./Spinner";
 import NewMessageForm from "./NewMessageForm";
 import PublishForm from "./PublishForm";
-import { Button } from "semantic-ui-react";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 
