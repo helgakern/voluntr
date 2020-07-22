@@ -118,6 +118,7 @@ p {
 
 }
 
+
 .ui.form {
   /* display: flex;
   flex-direction: column;   */
@@ -129,12 +130,6 @@ p {
 .ui-header-sign {
   padding: 3em;
   
-}
-
-.main-sign-up {
-  margin: auto;
-
-
 }
 
 .ui-header-sign-up {
@@ -204,7 +199,7 @@ ul {
   z-index: 1;
 }
 
-.responsive {
+.svg-container {
   float: right;
   width: 60%;
   height: auto;

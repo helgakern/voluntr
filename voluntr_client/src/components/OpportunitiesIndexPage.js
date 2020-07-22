@@ -119,14 +119,14 @@ export class OpportunitiesIndexPage extends React.Component {
             <ul className="opportunities-list">
             <li className = "opportunity-item" key = { opportunities.id } >
               <h4>
-              <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" >
+              <Link to = {`/opportunities/${opportunities.id}`} className = "item-title" href = "" >
               { opportunities.title } 
               </Link> 
               </h4>
               </li>
               <li className = "opportunity-" key = { opportunities.id } >
                 <h4>
-              <Link to = {`/opportunities/${opportunities.id}`} className = "item" href = "" >
+              <Link to = {`/opportunities/${opportunities.id}`} className = "item-title" href = "" >
               {moment(opportunities.date).format("DD/MM/YYYY")}
               {/* { opportunities.date }  */}
               </Link> 
