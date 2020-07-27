@@ -22,7 +22,7 @@ function NewMessageForm(props) {
         </div>
 
         <button className="ui button" type="submit">
-          Send message
+          Send
         </button>
       </form>
     </div>
